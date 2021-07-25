@@ -1,12 +1,12 @@
 {
-  "short_name": "MifosX",
-  "name": "MifosX Web App",
+  "short_name": "Payment Hub",
+  "name": "Payment Hub Web App",
   "start_url": "/",
   "scope": "/",
   "theme_color": "#fff",
   "background_color": "#fff",
   "display": "standalone",
-  "description": "MifosX Web App is the default web application built on top of the Fineract platform for the Mifos user community leveraging the popular Angular framework.",
+  "description": "Payment Hub Web App is the default web application built on top of the Fineract platform for the Mifos user community leveraging the popular Angular framework.",
   "icons": [
     {
       "src": "assets/images/MifosX_logo.png",

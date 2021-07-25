@@ -57,7 +57,7 @@
  </mat-form-field>
 
   <mat-form-field fxFlex="20%">
-    <mat-label>{{'Transaction Date To' | translate}} | translate}}</mat-label>
+    <mat-label>{{'Transaction Date To' | translate}}</mat-label>
     <input matInput [ngxMatDatetimePicker]="transactionDateToPicker" placeholder="Choose a date" [formControl]="transactionDateTo"
        [min]="minDate" [max]="maxDate" >
     <mat-datepicker-toggle matSuffix [for]="transactionDateToPicker"></mat-datepicker-toggle>
@@ -72,7 +72,7 @@
 <!-- Autocomplete data -->
 <mat-autocomplete autoActiveFirstOption #currenciesAutocomplete="matAutocomplete" [displayWith]="displayCurrencyName">
   <mat-option *ngFor="let currency of filteredCurrencies | async" [value]="{ AlphabeticCode: currency.AlphabeticCode, Currency: currency.Currency }">
-    {{ currency.Currency}} ( {{ currency.AlphabeticCode }} )
+    {{ 'Currencies.' + currency.Currency | translate }} ( {{ currency.AlphabeticCode }} )
   </mat-option>
 </mat-autocomplete>
 

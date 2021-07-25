@@ -1,9 +1,9 @@
 {
-  "name": "mifosx-web-app",
-  "version": "0.0.0",
-  "description": "MifosX Web App is the default web application built on top of the Fineract platform for the Mifos user community leveraging the popular Angular framework.",
+  "name": "paymenthub-web-app",
+  "version": "1.0.0",
+  "description": "Payment Hub Web App is the default web application built on top of Payment Hub user community leveraging the popular Angular framework.",
   "keywords": [
-    "mifos",
+    "Payment Hub",
     "openmf",
     "fineract",
     "angular"

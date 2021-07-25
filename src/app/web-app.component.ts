@@ -23,7 +23,7 @@ import { AlertService } from './core/alert/alert.service';
 import { Alert } from './core/alert/alert.model';
 
 /** Initialize Logger */
-const log = new Logger('MifosX');
+const log = new Logger('PaymentHub');
 
 /**
  * Main web app component.

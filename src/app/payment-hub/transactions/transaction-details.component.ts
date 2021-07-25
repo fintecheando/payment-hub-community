@@ -104,9 +104,11 @@ export class TransactionDetailsComponent implements OnInit {
    */
   ngOnInit() {
     this.route.data.subscribe((data: { transaction: any }) => {
+      console.log(data);
       this.datasource = data.transaction;
       this.setTransactionBusinessAttributes();
     });
+
     const source = from(this.datasource.tasks);
     const example = source.pipe(
       groupBy(transaction => transaction['type']),

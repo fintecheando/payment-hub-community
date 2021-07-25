@@ -11,15 +11,17 @@
 
   <div fxFlex="70%" fxLayout="column" fxLayoutAlign="center center" fxHide.lt-md class="cover">
     <div class="cover-content">
-      <h1 class="mat-display-1 cover-title">Mifos</h1>
+      <!--
+      <h1 class="mat-display-1 cover-title">{{'APP_NAME'| translate}}</h1>
       <p class="mat-headline cover-description">
-        Mifos X is designed by the
-        <a href="http://www.openmf.org" target="_blank" class="cover-link">Mifos Initiative</a>. A
+        Payment Hub is designed by the
+        <a href="http://www.openmf.org" target="_blank" class="cover-link">Payment Hub Initiative</a>. A
         <a href="http://mifos.org/resources/community/" target="_blank" class="cover-link">global community</a> that
         aims to speed the elimination of poverty by enabling Organizations to more effectively and efficiently deliver
         responsible financial services to the world’s poor and unbanked. Sounds interesting?
         <a href="http://mifos.org/take-action/volunteer/" target="_blank" class="cover-link">Get involved!</a>
       </p>
+      -->
     </div>
   </div>
 
@@ -40,11 +42,11 @@
 
     <!-- Logo with Organization Name -->
     <div fxLayout="row" fxLayoutAlign="center center" fxFlex="1 0 auto">
-      <img src="assets/images/mifos-logo-flat.png" alt="Mifos X Logo" class="img-container" />
+      <img src="assets/images/client-logo-flat.png" alt="Payment Hub Logo" class="img-container" />
     </div>
 
     <div fxLayout="row" fxFlex="3 0 auto" fxLayoutAlign="center start">
-      <p>Payment Hub EE - Operations Management</p>
+      <p>{{'APP_NAME' | translate}} - {{'SUBAPP_NAME' | translate}}</p>
     </div>
 
     <!--
@@ -58,19 +60,20 @@
       <mifosx-reset-password *ngIf="resetPassword"></mifosx-reset-password>
     </div>
 
-    <!-- Contact Information/Resources (hidden on smaller screens) -->
+    <!-- Contact Information/Resources (hidden on smaller screens) 
     <mat-list fxHide.lt-lg fxLayout="row" fxFlexAlign="center" fxFlex="3 0 auto" class="information-list">
       <mat-list-item><button mat-button [matMenuTriggerFor]="resourcesMenu">Resources</button></mat-list-item>
       <mat-list-item><button mat-button [matMenuTriggerFor]="communityMenu">Community</button></mat-list-item>
       <mat-list-item><button mat-button [matMenuTriggerFor]="contributeMenu">Contribute</button></mat-list-item>
     </mat-list>
+    -->
 
     <!-- Footer -->
     <mifosx-footer></mifosx-footer>
   </div>
 </div>
 
-<!-- Contact Information/Resources Menus -->
+<!-- Contact Information/Resources Menus 
 <mat-menu #resourcesMenu="matMenu">
   <a href="https://mifosforge.jira.com/wiki/spaces/docs/pages/52035622/User+Manual" target="_blank" mat-menu-item
     >User Manual</a
@@ -102,3 +105,4 @@
   <a href="https://sourceforge.net/projects/mifos/" target="_blank" mat-menu-item>Working with Code</a>
   <a href="http://mifos.org/donate/" target="_blank" mat-menu-item>Donate</a>
 </mat-menu>
+-->
