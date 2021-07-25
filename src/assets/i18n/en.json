@@ -59,7 +59,26 @@
   "Sign Out": "Sign Out",
   "Search": "Search",
   "Frequently Accessed": "Frequently Accessed",
-  "Main Items": "Main Items"
+  "Main Items": "Main Items",
+  "Main Configuration": "Main Configuration",
+  "Name of the Organization": "Name of the Organization",
+  "Description": "Description",
+  "Summary": "Summary",
+  "Default Language": "Default Language",
+  "Default Date Format": "Default Date Format",
+  "Images": "Images",
+  "Favicon": "Favicon",
+  "Cover Image": "Cover Image",
+  "Logo": "Logo",
+  "Logo with Organization Name": "Logo with Organization Name",
+  "Theme and Font": "Theme and Font",
+  "Theme": "Theme",
+  "Default Font": "Default Font",
+  "Contact Information": "Contact Information",
+  "Website": "Website",
+  "Email": "Email",
+  "Contact No": "Contact No"
+
 
 
 }

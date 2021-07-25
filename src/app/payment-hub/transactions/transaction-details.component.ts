@@ -160,7 +160,10 @@ export class TransactionDetailsComponent implements OnInit {
   }
 
   getPaymentProcessId() {
-    return this.datasource.transfer.workflowInstanceKey;
+    if (this.datasource.transfer && this.datasource.transfer.workflowInstanceKey) {
+      return this.datasource.transfer.workflowInstanceKey;
+    }
+    return '';
   }
 
   getTransferId() {

@@ -7,7 +7,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 
 /** Tanslation Imports */
 import {TranslateModule, TranslateService, TranslateLoader} from '@ngx-translate/core';
-import { ApplicationInitializerFactory, HttpLoaderFactory } from './translation.config';
+import { HttpLoaderFactory } from './translation.config';
+import { CustomMatPaginatorIntl } from './custom-mat-paginator-intl';
 
 /** Chart Imports */
 import { NgxChartsModule } from '@swimlane/ngx-charts';
@@ -35,10 +36,9 @@ import { SystemModule } from './system/system.module';
 import { UsersModule } from './users/users.module';
 import { PaymentHubModule } from './payment-hub/paymenthub.module';
 
-
 /** Main Routing Module */
 import { AppRoutingModule } from './app-routing.module';
-
+import { MatPaginatorIntl } from '@angular/material';
 
 export function initConfig(config: AppConfig) {
   return () => config.load();
@@ -81,7 +81,12 @@ export function initConfig(config: AppConfig) {
       useFactory: initConfig,
       deps: [ AppConfig, TranslateService, Injector ],
       multi: true
-    }],
+    },
+    {
+      provide: MatPaginatorIntl,
+      useClass: CustomMatPaginatorIntl,
+    },
+  ],
   bootstrap: [WebAppComponent]
 })
 export class AppModule { }

@@ -59,7 +59,31 @@
   "Sign Out": "Cerrar Sesión",
   "Search": "Buscar",
   "Frequently Accessed": "Acceso Frequente",
-  "Main Items": "Destacados"
+  "Main Items": "Destacados",
+  "Main Configuration": "Configuraciones",
+  "Name of the Organization": "Organización",
+  "Description": "Descripción",
+  "Summary": "Resumen",
+  "Default Language": "Lenguaje de Default",
+  "Default Date Format": "Formato de Fechas",
+  "Images": "Imagenes",
+  "Favicon": "Favicon",
+  "Cover Image": "Imagen principal",
+  "Logo": "Logotipo",
+  "Logo with Organization Name": "Logotipo con nombre de la Organización",
+  "Theme and Font": "Tema y Fuentes",
+  "Theme": "Tema",
+  "Default Font": "Fuente",
+  "Contact Information": "Información de Contacto",
+  "Website": "Sitio Web",
+  "Email": "Correo Electrónico",
+  "Contact No": "Teléfono",
+  "PAGINATOR": {
+    "ITEMS_PER_PAGE": "Elementos",
+    "NEXT_PAGE": "Siguiente",
+    "PREVIOUS_PAGE": "Previa",
+    "OF_LABEL": "de"
+  }
 
 
 }
