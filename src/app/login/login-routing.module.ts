@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 /** Transalation Imports */
-import { extract } from '../core/i18n/i18n.service';
 
 /** Custom Components */
 import { LoginComponent } from './login.component';
@@ -13,7 +12,7 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
-    data: { title: extract('Login') }
+    data: { title: 'Login' }
   }
 ];
 

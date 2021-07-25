@@ -11,16 +11,16 @@
           "payeePartyId":"27710305999",
           "payeePartyIdType":"MSISDN",
           "payeeFee":0,
-          "payeeFeeCurrency":"TZS",
+          "payeeFeeCurrency":"MXP",
           "payeeQuoteCode":null,
           "payerDfspId":"in01tn01",
           "payerPartyId":"27710101999",
           "payerPartyIdType":"MSISDN",
           "payerFee":1,
-          "payerFeeCurrency":"TZS",
+          "payerFeeCurrency":"MXP",
           "payerQuoteCode":"634b57f6-02f4-40af-b6d9-6998390fbb79",
           "amount":10,
-          "currency":"TZS"
+          "currency":"MXP"
        },
        {
           "id":52,
@@ -42,7 +42,7 @@
           "payerFeeCurrency":null,
           "payerQuoteCode":null,
           "amount":11,
-          "currency":"TZS"
+          "currency":"MXP"
        },
        {
           "id":62,
@@ -64,7 +64,7 @@
           "payerFeeCurrency":null,
           "payerQuoteCode":null,
           "amount":11,
-          "currency":"TZS"
+          "currency":"MXP"
        },
        {
           "id":104,
@@ -77,16 +77,16 @@
           "payeePartyId":"27710305999",
           "payeePartyIdType":"MSISDN",
           "payeeFee":0,
-          "payeeFeeCurrency":"TZS",
+          "payeeFeeCurrency":"MXP",
           "payeeQuoteCode":null,
           "payerDfspId":"in01tn01",
           "payerPartyId":"27710101999",
           "payerPartyIdType":"MSISDN",
           "payerFee":1,
-          "payerFeeCurrency":"TZS",
+          "payerFeeCurrency":"MXP",
           "payerQuoteCode":"9db73886-dffd-4ea4-ad16-fe50ddfb29e8",
           "amount":12,
-          "currency":"TZS"
+          "currency":"MXP"
        }
     ],
     "pageable":{

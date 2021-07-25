@@ -6,7 +6,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { Route } from '../core/route/route.service';
 
 /** Translation Imports */
-import { extract } from '../core/i18n/i18n.service';
 
 /** Custom Components */
 import { HomeComponent } from './home.component';
@@ -23,12 +22,12 @@ const routes: Routes = [
     {
       path: 'home',
       component: HomeComponent,
-      data: { title: extract('Home') }
+      data: { title: 'Home' }
     },
     {
       path: 'dashboard',
       component: DashboardComponent,
-      data: { title: extract('Dashboard'), breadcrumb: 'Dashboard' }
+      data: { title: 'Dashboard', breadcrumb: 'Dashboard' }
     }
   ])
 ];

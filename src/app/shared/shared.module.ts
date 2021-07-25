@@ -16,13 +16,8 @@ import { ThemePickerComponent } from './theme-picker/theme-picker.component';
 import { IconsModule } from './icons.module';
 import { MaterialModule } from './material.module';
 
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { HttpClient } from '@angular/common/http';
 
-export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, "../../translations/", ".json");
-}
 
 /**
  * Shared Module
@@ -35,13 +30,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     IconsModule,
     MaterialModule,
     ReactiveFormsModule,
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: (HttpLoaderFactory),
-        deps: [HttpClient]
-      }
-    })
+    TranslateModule
   ],
   declarations: [
     FormfieldComponent,

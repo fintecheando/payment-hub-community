@@ -10,16 +10,16 @@
        "payeePartyId":"27710305999",
        "payeePartyIdType":"MSISDN",
        "payeeFee":0,
-       "payeeFeeCurrency":"TZS",
+       "payeeFeeCurrency":"MXP",
        "payeeQuoteCode":null,
        "payerDfspId":"in01tn01",
        "payerPartyId":"27710101999",
        "payerPartyIdType":"MSISDN",
        "payerFee":1,
-       "payerFeeCurrency":"TZS",
+       "payerFeeCurrency":"MXP",
        "payerQuoteCode":"634b57f6-02f4-40af-b6d9-6998390fbb79",
        "amount":10,
-       "currency":"TZS"
+       "currency":"MXP"
     },
     "tasks":[
        {
@@ -246,7 +246,7 @@
           "workflowInstanceKey":2251799813688522,
           "timestamp":1587123960085,
           "name":"transactionRequest",
-          "value":"\"{\\n  \\\"clientRefId\\\": \\\"ref\\\",\\n  \\\"payer\\\": {\\n    \\\"partyIdInfo\\\": {\\n      \\\"partyIdType\\\": \\\"MSISDN\\\",\\n      \\\"partyIdentifier\\\": \\\"27710101999\\\",\\n      \\\"fspId\\\": \\\"in01tn01\\\",\\n      \\\"tenantId\\\": \\\"tn01\\\"\\n    }\\n  },\\n  \\\"payee\\\": {\\n    \\\"partyIdInfo\\\": {\\n      \\\"partyIdType\\\": \\\"MSISDN\\\",\\n      \\\"partyIdentifier\\\": \\\"27710305999\\\"\\n    },\\n    \\\"merchantClassificationCode\\\": \\\"\\\"\\n  },\\n  \\\"amountType\\\": \\\"SEND\\\",\\n  \\\"amount\\\": {\\n    \\\"amount\\\": 10,\\n    \\\"currency\\\": \\\"TZS\\\"\\n  },\\n  \\\"transactionType\\\": {\\n    \\\"scenario\\\": \\\"TRANSFER\\\",\\n    \\\"initiator\\\": \\\"PAYER\\\",\\n    \\\"initiatorType\\\": \\\"CONSUMER\\\"\\n  },\\n  \\\"note\\\": \\\"Demo interoperation merchant payment\\\",\\n  \\\"expiration\\\": \\\"2019-12-31T00:00:00.000-01:00\\\"\\n}\\n\""
+          "value":"\"{\\n  \\\"clientRefId\\\": \\\"ref\\\",\\n  \\\"payer\\\": {\\n    \\\"partyIdInfo\\\": {\\n      \\\"partyIdType\\\": \\\"MSISDN\\\",\\n      \\\"partyIdentifier\\\": \\\"27710101999\\\",\\n      \\\"fspId\\\": \\\"in01tn01\\\",\\n      \\\"tenantId\\\": \\\"tn01\\\"\\n    }\\n  },\\n  \\\"payee\\\": {\\n    \\\"partyIdInfo\\\": {\\n      \\\"partyIdType\\\": \\\"MSISDN\\\",\\n      \\\"partyIdentifier\\\": \\\"27710305999\\\"\\n    },\\n    \\\"merchantClassificationCode\\\": \\\"\\\"\\n  },\\n  \\\"amountType\\\": \\\"SEND\\\",\\n  \\\"amount\\\": {\\n    \\\"amount\\\": 10,\\n    \\\"currency\\\": \\\"MXP\\\"\\n  },\\n  \\\"transactionType\\\": {\\n    \\\"scenario\\\": \\\"TRANSFER\\\",\\n    \\\"initiator\\\": \\\"PAYER\\\",\\n    \\\"initiatorType\\\": \\\"CONSUMER\\\"\\n  },\\n  \\\"note\\\": \\\"Demo interoperation merchant payment\\\",\\n  \\\"expiration\\\": \\\"2019-12-31T00:00:00.000-01:00\\\"\\n}\\n\""
        },
        {
           "id":2,
@@ -286,7 +286,7 @@
           "workflowInstanceKey":2251799813688522,
           "timestamp":1587124001945,
           "name":"payeeQuoteResponse",
-          "value":"\"{\\\"transferAmount\\\":{\\\"amount\\\":\\\"10\\\",\\\"currency\\\":\\\"TZS\\\"},\\\"payeeReceiveAmount\\\":{\\\"amount\\\":\\\"10\\\",\\\"currency\\\":\\\"TZS\\\"},\\\"payeeFspFee\\\":{\\\"amount\\\":\\\"0\\\",\\\"currency\\\":\\\"TZS\\\"},\\\"payeeFspCommission\\\":{\\\"amount\\\":\\\"0\\\",\\\"currency\\\":\\\"TZS\\\"},\\\"expiration\\\":\\\"2021-04-17T12:46:41.042Z\\\",\\\"ilpPacket\\\":\\\"AQIxMCBnLnR6LmluMDN0bjA1Lk1TSVNETi4yNzcxMDMwNTk5OYIB0GV5SjBjbUZ1YzJGamRHbHZia2xrSWpvaVpqa3pOVGcyTkRBdE5EY3dNaTAwWXpGakxUazJNelF0TmpJNFlqUmtZemN3TldSaUlpd2ljWFZ2ZEdWSlpDSTZJakZtTWpSbU9EVTVMV0kyT1dJdE5HUTNOQzFpWXpjMUxXRTJNbVUwWkRrMFpHUmhZaUlzSW5CaGVXVmxJanA3SW5CaGNuUjVTV1JKYm1adklqcDdJbkJoY25SNVNXUlVlWEJsSWpvaVRWTkpVMFJPSWl3aWNHRnlkSGxKWkdWdWRHbG1hV1Z5SWpvaU1qYzNNVEF6TURVNU9Ua2lMQ0ptYzNCSlpDSTZJbWx1TUROMGJqQTFJbjE5TENKd1lYbGxjaUk2ZXlKd1lYSjBlVWxrU1c1bWJ5STZleUp3WVhKMGVVbGtWSGx3WlNJNklrMVRTVk5FVGlJc0luQmhjblI1U1dSbGJuUnBabWxsY2lJNklqSTNOekV3TVRBeE9UazVJaXdpWm5Od1NXUWlPaUpwYmpBeGRHNHdNU0o5ZlN3aVlXMXZkVzUwSWpwN0ltTjFjbkpsYm1ONUlqb2lWRnBUSWl3aVlXMXZkVzUwSWpvaU1UQWlmWDA9\\\",\\\"condition\\\":\\\"r-S8S7l2dEHA2_DGlS8ouaKch-1x65sDv31dDpCCTHw\\\"}\""
+          "value":"\"{\\\"transferAmount\\\":{\\\"amount\\\":\\\"10\\\",\\\"currency\\\":\\\"MXP\\\"},\\\"payeeReceiveAmount\\\":{\\\"amount\\\":\\\"10\\\",\\\"currency\\\":\\\"MXP\\\"},\\\"payeeFspFee\\\":{\\\"amount\\\":\\\"0\\\",\\\"currency\\\":\\\"MXP\\\"},\\\"payeeFspCommission\\\":{\\\"amount\\\":\\\"0\\\",\\\"currency\\\":\\\"MXP\\\"},\\\"expiration\\\":\\\"2021-04-17T12:46:41.042Z\\\",\\\"ilpPacket\\\":\\\"AQIxMCBnLnR6LmluMDN0bjA1Lk1TSVNETi4yNzcxMDMwNTk5OYIB0GV5SjBjbUZ1YzJGamRHbHZia2xrSWpvaVpqa3pOVGcyTkRBdE5EY3dNaTAwWXpGakxUazJNelF0TmpJNFlqUmtZemN3TldSaUlpd2ljWFZ2ZEdWSlpDSTZJakZtTWpSbU9EVTVMV0kyT1dJdE5HUTNOQzFpWXpjMUxXRTJNbVUwWkRrMFpHUmhZaUlzSW5CaGVXVmxJanA3SW5CaGNuUjVTV1JKYm1adklqcDdJbkJoY25SNVNXUlVlWEJsSWpvaVRWTkpVMFJPSWl3aWNHRnlkSGxKWkdWdWRHbG1hV1Z5SWpvaU1qYzNNVEF6TURVNU9Ua2lMQ0ptYzNCSlpDSTZJbWx1TUROMGJqQTFJbjE5TENKd1lYbGxjaUk2ZXlKd1lYSjBlVWxrU1c1bWJ5STZleUp3WVhKMGVVbGtWSGx3WlNJNklrMVRTVk5FVGlJc0luQmhjblI1U1dSbGJuUnBabWxsY2lJNklqSTNOekV3TVRBeE9UazVJaXdpWm5Od1NXUWlPaUpwYmpBeGRHNHdNU0o5ZlN3aVlXMXZkVzUwSWpwN0ltTjFjbkpsYm1ONUlqb2lWRnBUSWl3aVlXMXZkVzUwSWpvaU1UQWlmWDA9\\\",\\\"condition\\\":\\\"r-S8S7l2dEHA2_DGlS8ouaKch-1x65sDv31dDpCCTHw\\\"}\""
        },
        {
           "id":16,
@@ -294,7 +294,7 @@
           "workflowInstanceKey":2251799813688522,
           "timestamp":1587124009204,
           "name":"localQuoteResponse",
-          "value":"\"{\\\"transactionCode\\\":\\\"f9358640-4702-4c1c-9634-628b4dc705db\\\",\\\"state\\\":\\\"ACCEPTED\\\",\\\"expiration\\\":null,\\\"extensionList\\\":null,\\\"quoteCode\\\":\\\"634b57f6-02f4-40af-b6d9-6998390fbb79\\\",\\\"fspFee\\\":{\\\"amount\\\":1.00,\\\"currency\\\":\\\"TZS\\\"},\\\"fspCommission\\\":null}\""
+          "value":"\"{\\\"transactionCode\\\":\\\"f9358640-4702-4c1c-9634-628b4dc705db\\\",\\\"state\\\":\\\"ACCEPTED\\\",\\\"expiration\\\":null,\\\"extensionList\\\":null,\\\"quoteCode\\\":\\\"634b57f6-02f4-40af-b6d9-6998390fbb79\\\",\\\"fspFee\\\":{\\\"amount\\\":1.00,\\\"currency\\\":\\\"MXP\\\"},\\\"fspCommission\\\":null}\""
        },
        {
           "id":17,

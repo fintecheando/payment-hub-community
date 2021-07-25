@@ -89,7 +89,7 @@ export class HttpService extends HttpClient {
         this.injector.get(ErrorHandlerInterceptor)
       ];
     }
-    this.fineractUrl = "https://backoffice.flexcore.mx";
+    this.fineractUrl = "https://apis.flexcore.mx/V1.0/fineract-protected-movil";
   }
 
   cache(forceUpdate?: boolean): HttpClient {
@@ -106,15 +106,15 @@ export class HttpService extends HttpClient {
   }
 
   getFineractBaseUrl(): string {
-    return this.fineractUrl + "/api/v1";
+    return this.fineractUrl;
   }
 
+//  .set('Platform-TenantId', tenantId)
   setCustomHeaders(tenantId: string) {
     this.headers = new HttpHeaders()
       .set('Content-Type', 'application/json')
-      .set('Platform-TenantId', tenantId)
-      .set('Access-Control-Allow-Origin', '*')
-      .set('Authorization', "Basic bWlmb3NhZG1pbjpwYXNzd29yZA==");
+      .set('x-gravitee-api-key', "f3384a1b-4d7a-4fd2-9a5b-44e7ff6842b0")
+      .set('Authorization', "Basic NTUzMDAwMDAwMDphYjM4ZWFkYWViNzQ2NTk5ZjJjMWVlOTBmODI2N2YzMWY0NjczNDc0NjI3NjRhMjRkNzFhYzE4NDNlZTc3ZmUz");
   }
 
   getCustomHeaders(): HttpHeaders {

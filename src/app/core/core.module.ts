@@ -4,7 +4,6 @@ import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common
 import { RouteReuseStrategy, RouterModule } from '@angular/router';
 
 /** Translation Imports */
-import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
 /** Custom Services */
@@ -12,7 +11,6 @@ import { AuthenticationService } from './authentication/authentication.service';
 import { HttpService } from './http/http.service';
 import { HttpCacheService } from './http/http-cache.service';
 import { ProgressBarService } from './progress-bar/progress-bar.service';
-import { I18nService } from './i18n/i18n.service';
 
 /** Custom Guards */
 import { AuthenticationGuard } from './authentication/authentication.guard';
@@ -38,10 +36,6 @@ import { BreadcrumbComponent } from './shell/breadcrumb/breadcrumb.component';
 import { ContentComponent } from './shell/content/content.component';
 
 
-export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, "../../translations/", ".json");
-}
-
 /**
  * Core Module
  *
@@ -51,13 +45,7 @@ export function HttpLoaderFactory(http: HttpClient) {
   imports: [
     SharedModule,
     HttpClientModule,
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: (HttpLoaderFactory),
-        deps: [HttpClient]
-      }
-    }),
+    TranslateModule,
     RouterModule
   ],
   declarations: [
@@ -79,7 +67,6 @@ export function HttpLoaderFactory(http: HttpClient) {
       useClass: AuthenticationInterceptor,
       multi: true
     },
-    I18nService,
     HttpCacheService,
     ApiPrefixInterceptor,
     ErrorHandlerInterceptor,

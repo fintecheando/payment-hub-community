@@ -6,7 +6,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { Route } from '../core/route/route.service';
 
 /** Translation Imports */
-import { extract } from '../core/i18n/i18n.service';
 
 /** Custom Components */
 import { UsersComponent } from './users.component';
@@ -23,7 +22,7 @@ const routes: Routes = [
   Route.withShell([
     {
       path: 'users',
-      data: { title: extract('Users'), breadcrumb: 'Users' },
+      data: { title: 'Users', breadcrumb: 'Users' },
       children: [
         {
           path: '',
@@ -35,14 +34,14 @@ const routes: Routes = [
         {
           path: 'create',
           component: CreateUserComponent,
-          data: { title: extract('Create User'), breadcrumb: 'Create User' },
+          data: { title: 'Create User', breadcrumb: 'Create User' },
           resolve: {
             usersTemplate: UsersTemplateResolver
           }
         },
         {
           path: ':id',
-          data: { title: extract('View User'), routeResolveBreadcrumb: ['user', 'username'] },
+          data: { title: 'View User', routeResolveBreadcrumb: ['user', 'username'] },
           resolve: {
             user: UserResolver
           },

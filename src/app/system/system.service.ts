@@ -71,7 +71,7 @@ export class SystemService {
    * @returns {Observable<any>} Audit Trail Search Template.
    */
   getAuditTrailSearchTemplate(): Observable<any> {
-    return this.http.disableApiPrefix().get(this.http.getFineractBaseUrl() + '/audits/searchtemplate', {headers: this.http.getCustomHeaders()});
+    return this.http.disableApiPrefix().get(this.http.getFineractBaseUrl() + '/audits/searchtemplate', {headers: this.http.getCustomHeaders(), withCredentials: true});
   }
 
 }

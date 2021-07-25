@@ -1,12 +1,13 @@
 /** Angular Imports */
-import { NgModule, APP_INITIALIZER } from '@angular/core';
+import { NgModule, APP_INITIALIZER, Injector } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
 
 /** Tanslation Imports */
-import { TranslateModule } from '@ngx-translate/core';
+import {TranslateModule, TranslateService, TranslateLoader} from '@ngx-translate/core';
+import { ApplicationInitializerFactory, HttpLoaderFactory } from './translation.config';
 
 /** Chart Imports */
 import { NgxChartsModule } from '@swimlane/ngx-charts';
@@ -54,7 +55,13 @@ export function initConfig(config: AppConfig) {
     BrowserAnimationsModule,
     HttpClientModule,
     ServiceWorkerModule.register('./ngsw-worker.js', { enabled: environment.production }),
-    TranslateModule.forRoot(),
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [ HttpClient ]
+      }
+    }),
     NgxChartsModule,
     CoreModule,
     HomeModule,
@@ -72,7 +79,7 @@ export function initConfig(config: AppConfig) {
     {
       provide: APP_INITIALIZER,
       useFactory: initConfig,
-      deps: [AppConfig],
+      deps: [ AppConfig, TranslateService, Injector ],
       multi: true
     }],
   bootstrap: [WebAppComponent]

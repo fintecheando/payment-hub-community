@@ -8,7 +8,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { Route } from '../core/route/route.service';
 
 /** Translation Imports */
-import { extract } from '../core/i18n/i18n.service';
 
 /** Custom Components */
 import { IncomingTransactionsComponent } from './transactions/incoming/incoming-transactions.component';
@@ -30,7 +29,7 @@ const routes: Routes = [
   Route.withShell([
     {
       path: 'paymenthubee',
-      data: { title: extract('Payment Hub EE'), breadcrumb: 'Payment Hub EE' },
+      data: { title: 'Payment Hub EE', breadcrumb: 'Payment Hub EE' },
       children: [
         {
           path: '',
@@ -38,7 +37,7 @@ const routes: Routes = [
         },
         {
           path: 'incomingtransactions',
-          data: { title: extract('Search Incoming Transactions'), breadcrumb: 'Incoming Transactions' },
+          data: { title: 'Search Incoming Transactions', breadcrumb: 'Incoming Transactions' },
           children: [
             {
               path: '',
@@ -51,7 +50,7 @@ const routes: Routes = [
             {
               path: 'view/:id',
               component: TransactionDetailsComponent,
-              data: { title: extract('View Transaction'), routeParamBreadcrumb: 'id' },
+              data: { title: 'View Transaction', routeParamBreadcrumb: 'id' },
               resolve: {
                 transaction: TransactionResolver,
                 dfspEntries: DfspResolver
@@ -61,7 +60,7 @@ const routes: Routes = [
         },
         {
           path: 'outgoingtransactions',
-          data: { title: extract('Search Outgoing Transactions'), breadcrumb: 'Outgoing Transactions' },
+          data: { title: 'Search Outgoing Transactions', breadcrumb: 'Outgoing Transactions' },
           children: [
             {
               path: '',
@@ -74,7 +73,7 @@ const routes: Routes = [
             {
               path: 'view/:id',
               component: TransactionDetailsComponent,
-              data: { title: extract('View Transaction'), routeParamBreadcrumb: 'id' },
+              data: { title: 'View Transaction', routeParamBreadcrumb: 'id' },
               resolve: {
                 transaction: TransactionResolver,
                 dfspEntries: DfspResolver
@@ -84,7 +83,7 @@ const routes: Routes = [
         },
         {
           path: 'incomingrequesttopay',
-          data: { title: extract('Search Incoming Request To Pay'), breadcrumb: 'Incoming Request To Pay' },
+          data: { title: 'Search Incoming Request To Pay', breadcrumb: 'Incoming Request To Pay' },
           children: [
             {
               path: '',
@@ -98,7 +97,7 @@ const routes: Routes = [
             {
               path: ':id',
               component: ViewRequestToPayComponent,
-              data: { title: extract('View Request To Pay'), routeParamBreadcrumb: 'id' },
+              data: { title: 'View Request To Pay', routeParamBreadcrumb: 'id' },
               resolve: {
                 requestToPay: ViewRequestToPayResolver,
                 dfspEntries: DfspResolver
@@ -108,7 +107,7 @@ const routes: Routes = [
         },
         {
           path: 'outgoingrequesttopay',
-          data: { title: extract('Search Outgoing Request To Pay'), breadcrumb: 'Outgoing Request To Pay' },
+          data: { title: 'Search Outgoing Request To Pay', breadcrumb: 'Outgoing Request To Pay' },
           children: [
             {
               path: '',
@@ -122,7 +121,7 @@ const routes: Routes = [
             {
               path: ':id',
               component: ViewRequestToPayComponent,
-              data: { title: extract('View Request To Pay'), routeParamBreadcrumb: 'id' },
+              data: { title: 'View Request To Pay', routeParamBreadcrumb: 'id' },
               resolve: {
                 requestToPay: ViewRequestToPayResolver,
                 dfspEntries: DfspResolver

@@ -10,7 +10,7 @@ export let environment = {
   name: "dev",
   production: false,
   version: env.npm_package_version + "-dev",
-  serverUrl: "http://localhost:8800",
+  serverUrl: "",
   oauth: {
     enabled: "true", // For connecting to Mifos X using OAuth2 Authentication change the value to true
     serverUrl: "http://localhost:8800",

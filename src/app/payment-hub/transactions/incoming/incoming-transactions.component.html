@@ -1,32 +1,32 @@
 <div class="container" fxLayout="row wrap" fxLayoutGap="2%" fxLayout.lt-md="column">
 
   <mat-form-field fxFlex="20%">
-    <mat-label>Payer Id</mat-label>
+    <mat-label>{{'Payer Id' | translate}}</mat-label>
     <input matInput [formControl]="payerPartyId" >
   </mat-form-field>
 
   <mat-form-field fxFlex="20%">
-    <mat-label>Payer DFSP Id</mat-label>
+    <mat-label>{{'Payer DFSP Id' | translate}}</mat-label>
     <input matInput [formControl]="payerDfspId" >
   </mat-form-field>
 
   <mat-form-field fxFlex="20%">
-    <mat-label>Payer DFSP name</mat-label>
+    <mat-label>{{'Payer DFSP Name' | translate}}</mat-label>
     <input matInput [formControl]="payerDfspName" [matAutocomplete]="dfspEntriesAutocomplete">
   </mat-form-field>
 
   <mat-form-field fxFlex="20%">
-    <mat-label>Payee Id</mat-label>
+    <mat-label>{{'Payee Id' | translate}}</mat-label>
     <input matInput [formControl]="payeePartyId" >
   </mat-form-field>
 
   <mat-form-field fxFlex="20%">
-    <mat-label>Transaction ID</mat-label>
+    <mat-label>{{'Transaction ID' | translate}}</mat-label>
     <input matInput [formControl]="transactionId">
   </mat-form-field>
 
   <mat-form-field fxFlex="20%">
-    <mat-label>Status</mat-label>
+    <mat-label>{{'Status' | translate}}</mat-label>
     <mat-select [formControl]="status">
       <ng-container *ngFor="let filter of transactionStatusData">
         <mat-option [value]="filter.value" *ngIf="!filter.hidden">
@@ -37,17 +37,17 @@
   </mat-form-field>
 
   <mat-form-field fxFlex="20%">
-    <mat-label>Amount</mat-label>
+    <mat-label>{{'Amount' | translate}}</mat-label>
     <input matInput [formControl]="amount">
   </mat-form-field>
 
   <mat-form-field fxFlex="20%">
-    <mat-label>Currency</mat-label>
+    <mat-label>{{'Currency' | translate}}</mat-label>
     <input matInput [formControl]="currencyCode" [matAutocomplete]="currenciesAutocomplete">
   </mat-form-field>
 
   <mat-form-field fxFlex="20%">
-    <mat-label>Transaction Date From</mat-label>
+    <mat-label>{{'Transaction Date From' | translate}}</mat-label>
     <input matInput [ngxMatDatetimePicker]="transactionDateFromPicker" placeholder="Choose a date" [formControl]="transactionDateFrom"
        [min]="minDate" [max]="maxDate">
     <mat-datepicker-toggle matSuffix [for]="transactionDateFromPicker"></mat-datepicker-toggle>
@@ -57,7 +57,7 @@
  </mat-form-field>
 
   <mat-form-field fxFlex="20%">
-    <mat-label>Transaction Date To</mat-label>
+    <mat-label>{{'Transaction Date To' | translate}} | translate}}</mat-label>
     <input matInput [ngxMatDatetimePicker]="transactionDateToPicker" placeholder="Choose a date" [formControl]="transactionDateTo"
        [min]="minDate" [max]="maxDate" >
     <mat-datepicker-toggle matSuffix [for]="transactionDateToPicker"></mat-datepicker-toggle>
@@ -88,55 +88,55 @@
   <table mat-table [dataSource]="dataSource" matSort>
 
     <ng-container matColumnDef="startedAt">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Start Time (UTC) </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'Start Time' | translate}} (UTC)</th>
       <td mat-cell *matCellDef="let transaction"> {{ formatDate(convertTimestampToUTCDate(transaction.startedAt)) }} </td>
     </ng-container>
 
     <ng-container matColumnDef="completedAt">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Completed Time (UTC) </th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'Completed Time' | translate}} (UTC)</th>
         <td mat-cell *matCellDef="let transaction"> {{ formatDate(convertTimestampToUTCDate(transaction.completedAt)) }} </td>
     </ng-container>
 
     <ng-container matColumnDef="transactionId">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Transaction ID </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'Transaction ID' | translate}} </th>
       <td mat-cell *matCellDef="let transaction" matTooltip={{transaction.transactionId}}> {{ shortenValue(transaction.transactionId) }} </td>
     </ng-container>
 
     <ng-container matColumnDef="payerPartyId">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Payer Id </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'Payer Id' | translate}} </th>
       <td mat-cell *matCellDef="let transaction"> {{ transaction.payerPartyId }} </td>
     </ng-container>
 
   
 
     <ng-container matColumnDef="payerDfspId">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Payer DFSP Id </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'Payer DFSP Id' | translate}} </th>
       <td mat-cell *matCellDef="let transaction"> {{ transaction.payerDfspId }} </td>
     </ng-container>
 
     <ng-container matColumnDef="payerDfspName">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Payer DFSP Name </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'Payer DFSP Name' | translate}} </th>
       <td mat-cell *matCellDef="let transaction"> {{ displayDfspName(getDfpsEntry(transaction.payerDfspId)) }} </td>
     </ng-container>
 
     <ng-container matColumnDef="payeePartyId">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Payee Id </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'Payee Id' | translate}} </th>
       <td mat-cell *matCellDef="let transaction"> {{ transaction.payeePartyId }} </td>
     </ng-container>
 
     <ng-container matColumnDef="amount">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Amount </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'Amount' | translate}} </th>
       <td mat-cell *matCellDef="let transaction"> {{ transaction.amount }} </td>
     </ng-container>
 
     <ng-container matColumnDef="currency">
-      <th mat-header-cell *matHeaderCellDef> Currency </th>
+      <th mat-header-cell *matHeaderCellDef> {{ 'Currency' | translate}} </th>
       <td mat-cell *matCellDef="let transaction"> {{ transaction.currency }} </td>
     </ng-container>
 
     <ng-container matColumnDef="status">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
-    <td mat-cell *matCellDef="let transaction" [ngClass]="{'red': transaction.status==='FAILED','green': transaction.status==='COMPLETED','orange': transaction.status==='ACTION_NEEDED'}">{{ transaction.status }} </td>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'Status' | translate}} </th>
+    <td mat-cell *matCellDef="let transaction" [ngClass]="{'red': transaction.status==='FAILED','green': transaction.status==='COMPLETED','orange': transaction.status==='ACTION_NEEDED'}">{{ transaction.status | translate }} </td>
     </ng-container>
 
     <ng-container matColumnDef="actions">
@@ -147,12 +147,12 @@
     </ng-container>
 
     <!-- <ng-container matColumnDef="feeMethod">
-      <th mat-header-cell *matHeaderCellDef> Fee method </th>
+      <th mat-header-cell *matHeaderCellDef> Fee method' | translate}} </th>
       <td mat-cell *matCellDef="let transaction"> {{ transaction.feeMethod }} </td>
     </ng-container>
 
     <ng-container matColumnDef="feeAmount">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Fee </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'Fee' | translate}} </th>
       <td mat-cell *matCellDef="let transaction"> {{ transaction.payerFee+transaction.payeeFee }} </td>
     </ng-container> -->
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
