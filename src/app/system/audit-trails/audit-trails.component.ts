@@ -280,8 +280,11 @@ export class AuditTrailsComponent implements OnInit, AfterViewInit {
    * @param {any} user User data.
    * @returns {string} User name if valid otherwise undefined.
    */
-  displayUserName(user?: any): string | undefined {
-    return user ? user.name : undefined;
+  displayUserName(user?: any): string {
+    if (!user || !user.name) {
+      return "";
+    }
+    return user ? user.name : "";
   }
 
   /**

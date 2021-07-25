@@ -4,3 +4,5 @@ node_modules
 .github
 package-lock.json
 src/assets/*.properties
+
+.DS_Store

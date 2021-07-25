@@ -75,6 +75,7 @@ export const HTTP_DYNAMIC_INTERCEPTORS = new InjectionToken<HttpInterceptor>('HT
 export class HttpService extends HttpClient {
 
   fineractUrl: string;
+  paymentHubUrl: string;
   headers: HttpHeaders;
 
   constructor(private httpHandler: HttpHandler,
@@ -90,6 +91,7 @@ export class HttpService extends HttpClient {
       ];
     }
     this.fineractUrl = "https://apis.flexcore.mx/V1.0/fineract-protected-movil";
+    this.paymentHubUrl = "http://localhost:8800";
   }
 
   cache(forceUpdate?: boolean): HttpClient {
@@ -109,10 +111,22 @@ export class HttpService extends HttpClient {
     return this.fineractUrl;
   }
 
+  getPaymentHubBaseUrl(): string {
+    return this.paymentHubUrl;
+  }
+
 //  .set('Platform-TenantId', tenantId)
   setCustomHeaders(tenantId: string) {
     this.headers = new HttpHeaders()
       .set('Content-Type', 'application/json')
+      .set('x-gravitee-api-key', "f3384a1b-4d7a-4fd2-9a5b-44e7ff6842b0")
+      .set('Authorization', "Basic NTUzMDAwMDAwMDphYjM4ZWFkYWViNzQ2NTk5ZjJjMWVlOTBmODI2N2YzMWY0NjczNDc0NjI3NjRhMjRkNzFhYzE4NDNlZTc3ZmUz");
+  }
+
+  getTenantHeaders(): HttpHeaders {
+    return new HttpHeaders()
+      .set('Content-Type', 'application/json')
+      .set('Platform-TenantId', "tenant_default")
       .set('x-gravitee-api-key', "f3384a1b-4d7a-4fd2-9a5b-44e7ff6842b0")
       .set('Authorization', "Basic NTUzMDAwMDAwMDphYjM4ZWFkYWViNzQ2NTk5ZjJjMWVlOTBmODI2N2YzMWY0NjczNDc0NjI3NjRhMjRkNzFhYzE4NDNlZTc3ZmUz");
   }

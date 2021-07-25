@@ -1,10 +1,12 @@
 @import '~@angular/material/theming';
 // Plus imports for other components in your app.
 // Custom material palette
+$dark-primary-text: #ffffff;
+
 $mat-picton-blue: (
-  100: #6ce0ff,
-  500: #1daeec,
-  700: #007fb9,
+  100: #ff4f30,
+  500: #CC0000,
+  700: #930000,
   contrast: (
     100: $dark-primary-text,
     500: $dark-primary-text,
@@ -13,9 +15,9 @@ $mat-picton-blue: (
 );
 
 $mat-yellow-green: (
-  100: #e7ffa5,
-  500: #b4d575,
-  700: #83a447,
+  100: #ffffff,
+  500: #f6f6f6,
+  700: #c3c3c3,
   contrast: (
     100: $dark-primary-text,
     500: $dark-primary-text,

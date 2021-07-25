@@ -19,17 +19,21 @@ export class RequestToPayService {
   constructor(private httpService: HttpService) { }
 
   getRequestsToPay() {
-    return this.httpService.get('/api/v1/transactionRequests', {headers: this.httpService.getCustomHeaders()});
+    return this.httpService.disableApiPrefix().get(this.httpService.getPaymentHubBaseUrl() + '/api/v1/transactionRequests', 
+      {headers: this.httpService.getTenantHeaders()});
   }
 
+  /*
   getRequestToPay(requestId: string): Observable<any> {
-    return this.httpService.get(`/api/v1/transactionRequest/${requestId}`, {headers: this.httpService.getCustomHeaders()});
+    return this.httpService.disableApiPrefix().get(this.httpService.getPaymentHubBaseUrl() + '/api/v1/transactionRequest/${requestId}', 
+      {headers: this.httpService.getTenantHeaders()});
   }
+  */
 
-  // getRequestToPay(id: string): Observable<any> {
-  //   return this.http
-  //     .disableApiPrefix()
-  //     .get('/assets/mock/payment-hub/transaction-details.mock.json');
-  // }
+  getRequestToPay(id: string): Observable<any> {
+    return this.httpService
+     .disableApiPrefix()
+      .get('/assets/mock/payment-hub/transaction-details.mock.json');
+  }
 
 }

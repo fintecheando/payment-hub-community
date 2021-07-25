@@ -1,5 +1,4 @@
-<div
-  [ngClass]="{
+<div [ngClass]="{
   'sidebar-full': !sidenavCollapsed,
   'sidebar-compact': sidenavCollapsed
   }">
@@ -8,8 +7,8 @@
 
     <!-- TODO: Allow customization by organization -->
     <div class="app-brand">
-      <img src="assets/images/MifosX_logo.png" alt="app-logo" class="app-logo">
-      <span class="app-logo-text text-muted">Mifos</span>
+      <img src="assets/images/logo_2.svg" alt="app-logo" class="app-logo">
+      <span class="app-logo-text text-muted">{{'APP_NAME' | translate}}</span>
     </div>
 
     <div class="app-user">
@@ -21,10 +20,11 @@
         {{ username }}
       </span>
       <div class="app-user-controls">
-        <button class="text-muted xs-button" mat-icon-button matTooltip="Settings" [routerLink]="['/settings']">
+        <button class="text-muted xs-button" mat-icon-button matTooltip="{{'Settings' | translate}}"
+          [routerLink]="['/settings']">
           <fa-icon icon="cog"></fa-icon>
         </button>
-        <button class="text-muted xs-button" mat-icon-button matTooltip="Sign Out" (click)="logout()">
+        <button class="text-muted xs-button" mat-icon-button matTooltip="{{'Sign Out' | translate}}" (click)="logout()">
           <fa-icon icon="sign-out-alt"></fa-icon>
         </button>
       </div>
@@ -35,11 +35,11 @@
       <!-- TODO: Generate frequently accessed routes dynamically -->
       <div class="mt-1 mb-1 nav-item-sep">
         <mat-divider></mat-divider>
-        <span class="text-muted icon-menu-title">Frequently Accessed</span>
+        <span class="text-muted icon-menu-title">{{'Frequently Accessed' | translate}}</span>
       </div>
       <div class="icon-menu">
         <div class="icon-menu-item">
-          <button mat-raised-button matTooltip="Home" [routerLink]="['/home']">
+          <button mat-raised-button matTooltip="{{'Home' | translate}}" [routerLink]="['/home']">
             <fa-icon icon="home" size="lg"></fa-icon>
           </button>
         </div>
@@ -47,7 +47,7 @@
 
       <div class="nav-item-sep">
         <mat-divider></mat-divider>
-        <span class="text-muted">Main Items</span>
+        <span class="text-muted">{{'Main Items' | translate}}</span>
       </div>
 
       <mat-nav-list>

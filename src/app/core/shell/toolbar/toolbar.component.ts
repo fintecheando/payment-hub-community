@@ -71,7 +71,11 @@ export class ToolbarComponent implements OnInit {
 
   displayUser() {
     const credentials = this.authenticationService.getCredentials();
-    return credentials ? credentials.username + ' - ' + credentials.tenantId : '';
+    if (credentials && credentials.username) {
+      return credentials ? credentials.username + ' - ' + credentials.tenantId : '';
+    } else {
+      return "";
+    }
   }
 
   /**

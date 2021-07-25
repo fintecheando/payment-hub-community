@@ -30,7 +30,7 @@
     <mat-select [formControl]="status">
       <ng-container *ngFor="let filter of transactionStatusData">
         <mat-option [value]="filter.value" *ngIf="!filter.hidden">
-          {{ filter.option }}
+          {{ filter.option | translate }}
         </mat-option>
       </ng-container>
     </mat-select>

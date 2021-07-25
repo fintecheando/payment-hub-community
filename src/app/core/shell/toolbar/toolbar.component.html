@@ -19,7 +19,7 @@
       </a>
       <a mat-tab-link class="tab-link" [matMenuTriggerFor]="adminMenu" #adminMenuTrigger="matMenuTrigger">
         <fa-icon class="mr-05" icon="shield-alt" size="lg"></fa-icon>
-        Admin
+        {{'Admin' | translate}}
       </a>
     </span>
 
@@ -34,7 +34,7 @@
   -->
   <div *ngIf="searchVisible" class="search-bar" fxFlex="auto" fxHide.lt-sm="true" [@fadeInOut]>
     <mat-form-field class="search">
-      <mat-label>Search</mat-label>
+      <mat-label>{{'Search' | translate}}</mat-label>
       <input matInput type="text">
     </mat-form-field>
   </div>
@@ -45,8 +45,10 @@
 
   <mifosx-language-selector class="ml-1 language" fxHide.lt-md></mifosx-language-selector>
 
+  <!--
   <mifosx-theme-picker fxHide.lt-md></mifosx-theme-picker>
-
+  -->
+  
   <!--
     TODO: Notifications
     Separate into its own component in shared module for reuse.
@@ -63,8 +65,8 @@
 </mat-toolbar>
 
 <mat-menu #adminMenu="matMenu" [overlapTrigger]="false">
-  <button mat-menu-item [routerLink]="['/users']">Users</button>
-  <button mat-menu-item [routerLink]="['/system']">System</button>
+  <button mat-menu-item [routerLink]="['/users']">{{'Users' | translate}}</button>
+  <button mat-menu-item [routerLink]="['/system']">{{'System' | translate}}</button>
 </mat-menu>
 
 <!-- Application User Help Menu -->
@@ -73,12 +75,12 @@
     <mat-icon>
       <fa-icon icon="cog" size="sm"></fa-icon>
     </mat-icon>
-    <span>Settings</span>
+    <span>{{'Settings' | translate}}</span>
   </button>
   <button mat-menu-item (click)="logout()">
     <mat-icon>
         <fa-icon icon="sign-out-alt" size="sm"></fa-icon>
     </mat-icon>
-    <span>Sign Out</span>
+    <span>{{'Sign Out' | translate}}</span>
   </button>
 </mat-menu>

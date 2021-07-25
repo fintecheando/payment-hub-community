@@ -1,32 +1,32 @@
 <div class="container" fxLayout="row wrap" fxLayoutGap="2%" fxLayout.lt-md="column">
 
   <mat-form-field fxFlex="20%">
-    <mat-label>Payer Id</mat-label>
+    <mat-label>{{'Payer Id' | translate}}</mat-label>
     <input matInput>
   </mat-form-field>
 
   <mat-form-field fxFlex="20%">
-    <mat-label>Payer DFSP Id</mat-label>
+    <mat-label>{{'Payer DFSP Id' | translate}}</mat-label>
     <input matInput >
   </mat-form-field>
 
   <mat-form-field fxFlex="20%">
-    <mat-label>Payer DFSP name</mat-label>
+    <mat-label>{{'Payer DFSP Name' | translate}}</mat-label>
     <input matInput>
   </mat-form-field>
 
   <mat-form-field fxFlex="20%">
-    <mat-label>Payee Id</mat-label>
+    <mat-label>{{'Payee Id' | translate}}</mat-label>
     <input matInput>
   </mat-form-field>
 
   <mat-form-field fxFlex="20%">
-    <mat-label>Transaction ID</mat-label>
+    <mat-label>{{'Transaction ID' | translate}}</mat-label>
     <input matInput>
   </mat-form-field>
 
   <mat-form-field fxFlex="20%">
-    <mat-label>Status</mat-label>
+    <mat-label>{{'Status' | translate}}</mat-label>
     <mat-select>
       <ng-container>
         <mat-option>
@@ -37,17 +37,17 @@
   </mat-form-field>
 
   <mat-form-field fxFlex="20%">
-    <mat-label>Amount</mat-label>
+    <mat-label>{{'Amount' | translate}}</mat-label>
     <input matInput>
   </mat-form-field>
 
   <mat-form-field fxFlex="20%">
-    <mat-label>Currency</mat-label>
+    <mat-label>{{'Currency' | translate}}</mat-label>
     <input matInput>
   </mat-form-field>
 
   <mat-form-field fxFlex="20%">
-    <mat-label>Transaction Date From</mat-label>
+    <mat-label>{{'Transaction Date From' | translate}}</mat-label>
     <input matInput [ngxMatDatetimePicker]="requesttopayDateFromPicker" placeholder="Choose a date"
        [min]="minDate" [max]="maxDate">
     <mat-datepicker-toggle matSuffix [for]="requesttopayDateFromPicker"></mat-datepicker-toggle>
@@ -57,7 +57,7 @@
  </mat-form-field>
 
   <mat-form-field fxFlex="20%">
-    <mat-label>Transaction Date To</mat-label>
+    <mat-label>{{'Transaction Date To' | translate}}</mat-label>
     <input matInput [ngxMatDatetimePicker]="requesttopayDateToPicker" placeholder="Choose a date"
        [min]="minDate" [max]="maxDate" >
     <mat-datepicker-toggle matSuffix [for]="requesttopayDateToPicker"></mat-datepicker-toggle>
@@ -75,52 +75,52 @@
     <table mat-table [dataSource]="dataSource" matSort>
 
       <ng-container matColumnDef="startedAt">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Start Time (UTC) </th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'Start Time' | translate}} (UTC)</th>
         <td mat-cell *matCellDef="let requestToPay"> {{ formatDate(requestToPay.startedAt) }} </td>
       </ng-container>
 
       <ng-container matColumnDef="completedAt">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Completed Time (UTC) </th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'Completed Time' | translate}} (UTC)</th>
         <td mat-cell *matCellDef="let requestToPay"> {{ formatDate(requestToPay.completedAt) }} </td>
       </ng-container>
 
       <ng-container matColumnDef="transactionId">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Transaction ID </th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'Transaction ID' | translate}} </th>
         <td mat-cell *matCellDef="let requestToPay" matTooltip={{requestToPay.transactionId}}> {{ shortenValue(requestToPay.transactionId) }} </td>
       </ng-container>
 
       <ng-container matColumnDef="payerPartyId">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Payer Party ID </th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'Payer Party ID' | translate}} </th>
         <td mat-cell *matCellDef="let requestToPay"> {{ requestToPay.payerPartyId }} </td>
       </ng-container>
 
       <ng-container matColumnDef="payeePartyId">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Payee Party ID </th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'Payee Party ID' | translate}} </th>
         <td mat-cell *matCellDef="let requestToPay"> {{ requestToPay.payeePartyId }} </td>
       </ng-container>
 
       <ng-container matColumnDef="payerDfspId">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Payer Dfsp ID </th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'Payer DFSP Id' | translate}} </th>
         <td mat-cell *matCellDef="let requestToPay"> {{ requestToPay.payerDfspId }} </td>
       </ng-container>
 
       <ng-container matColumnDef="payerDfspName">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Payer DFSP Name </th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'Payer DFSP Name' | translate}} </th>
         <td mat-cell *matCellDef="let requestToPay"> {{ displayDfspName(getDfpsEntry(requestToPay.payerDfspId)) }} </td>
       </ng-container>
 
       <ng-container matColumnDef="amount">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Amount </th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'Amount' | translate}} </th>
         <td mat-cell *matCellDef="let requestToPay"> {{ requestToPay.amount }} </td>
       </ng-container>
 
       <ng-container matColumnDef="currency">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Currency </th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'Currency' | translate}} </th>
         <td mat-cell *matCellDef="let requestToPay"> {{ requestToPay.currency }} </td>
       </ng-container>
 
       <ng-container matColumnDef="state">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> State </th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'Status' | translate}} </th>
         <td mat-cell *matCellDef="let requestToPay" [ngClass]="{'red': requestToPay.state==='FAILED','green': requestToPay.state==='ACCEPTED','orange': requestToPay.state==='IN_PROGRESS'}"> {{ requestToPay.state }} </td>
       </ng-container>
 
