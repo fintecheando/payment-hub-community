@@ -1,32 +1,32 @@
 [
     {
         "id": "in01tn01",
-        "name": "Buffalo Bank",
+        "name": "Santander México",
         "tenantId": "tn01"
     },
     {
         "id": "in01tn02",
-        "name": "Lion Bank",
+        "name": "AZTECA",
         "tenantId": "tn02"
     },
     {
         "id": "in02tn03",
-        "name": "Rhino Bank",
+        "name": "IXE",
         "tenantId": "tn03"
     },
     {
         "id": "in02tn04",
-        "name": "Elephant Bank",
+        "name": "HSBC",
         "tenantId": "tn04"
     },
     {
         "id": "in03tn05",
-        "name": "Leopard Bank",
+        "name": "BBVA",
         "tenantId": "tn05"
     },
     {
         "id": "in03tn06",
-        "name": "Gorilla Bank",
+        "name": "BANORTE",
         "tenantId": "tn06"
     }
 ]

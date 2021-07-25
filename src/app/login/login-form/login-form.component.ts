@@ -72,7 +72,7 @@ export class LoginFormComponent implements OnInit {
     this.loginForm = this.formBuilder.group({
       'username': ['', Validators.required],
       'password': ['', Validators.required],
-      'tenant': ['', Validators.required],
+      'tenant': ['tenant_default', Validators.required],
       'remember': false
     });
   }

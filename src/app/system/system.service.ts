@@ -1,9 +1,11 @@
 /** Angular Imports */
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpParams } from '@angular/common/http';
 
 /** rxjs Imports */
 import { Observable } from 'rxjs';
+
+import { HttpService } from 'app/core/http/http.service';
 
 /**
  * System service.
@@ -16,13 +18,13 @@ export class SystemService {
   /**
    * @param {HttpClient} http Http Client to send requests.
    */
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpService) { }
 
   /**
    * @returns {Observable<any>} Fetches Roles and Permissions
    */
   getRoles(): Observable<any> {
-    return this.http.get('/roles');
+    return this.http.disableApiPrefix().get(this.http.getFineractBaseUrl() + '/roles', {headers: this.http.getCustomHeaders()});
   }
 
   /**
@@ -30,7 +32,7 @@ export class SystemService {
    * @returns {Observable<any>}
    */
   createRole(role: any): Observable<any> {
-    return this.http.post('/roles', role);
+    return this.http.disableApiPrefix().post(this.http.getFineractBaseUrl() + '/roles', role, {headers: this.http.getCustomHeaders()});
   }
 
   /**
@@ -54,7 +56,7 @@ export class SystemService {
         httpParams = httpParams.set(filter.type, filter.value);
       }
     });
-    return this.http.get('/audits', { params: httpParams });
+    return this.http.disableApiPrefix().get(this.http.getFineractBaseUrl() + '/audits', { params: httpParams, headers: this.http.getCustomHeaders() });
   }
 
   /**
@@ -62,14 +64,14 @@ export class SystemService {
    * @returns {Observable<any>}
    */
   getAuditTrail(auditTrailId: string): Observable<any> {
-    return this.http.get(`/audits/${auditTrailId}`);
+    return this.http.disableApiPrefix().get(this.http.getFineractBaseUrl() + `/audits/${auditTrailId}`, {headers: this.http.getCustomHeaders()});
   }
 
   /**
    * @returns {Observable<any>} Audit Trail Search Template.
    */
   getAuditTrailSearchTemplate(): Observable<any> {
-    return this.http.get('/audits/searchtemplate');
+    return this.http.disableApiPrefix().get(this.http.getFineractBaseUrl() + '/audits/searchtemplate', {headers: this.http.getCustomHeaders()});
   }
 
 }

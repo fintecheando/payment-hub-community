@@ -79,7 +79,7 @@ export class AuthenticationService {
         this.storage = localStorage;
       }
 
-      const oAuthRefreshToken = JSON.parse(this.getStoreageItem(this.oAuthTokenDetailsStorageKey)).refresh_token;
+      const oAuthRefreshToken = ''; // JSON.parse(this.getStoreageItem(this.oAuthTokenDetailsStorageKey)).refresh_token;
       if (oAuthRefreshToken) {
         this.refreshAccessToken = true;
         this.authorizationToken = `Bearer ${oAuthRefreshToken}`;
@@ -101,7 +101,7 @@ export class AuthenticationService {
    * @param {LoginContext} loginContext Login parameters.
    * @returns {Observable<boolean>} True if authentication is successful.
    */
-  login(loginContext: LoginContext) {
+  loginTmp(loginContext: LoginContext) {
     this.alertService.alert({ type: 'Authentication Start', message: 'Please wait...' });
     this.rememberMe = loginContext.remember;
     this.storage = this.rememberMe ? localStorage : sessionStorage;
@@ -110,7 +110,7 @@ export class AuthenticationService {
     this.username = loginContext.username;
     httpParams = httpParams.set('username', loginContext.username);
     httpParams = httpParams.set('password', loginContext.password);
-    //httpParams = httpParams.set('tenantIdentifier', loginContext.tenant);
+    httpParams = httpParams.set('tenantIdentifier', loginContext.tenant);
     if (environment.oauth.enabled === 'true') {
 
       httpParams = httpParams.set('grant_type', 'password');
@@ -135,6 +135,22 @@ export class AuthenticationService {
           })
         );
     }
+  }
+
+  login(loginContext: LoginContext) {
+    this.alertService.alert({ type: 'Authentication Start', message: 'Please wait...' });
+    this.rememberMe = loginContext.remember;
+    this.storage = this.rememberMe ? localStorage : sessionStorage;
+    this.tenantId = loginContext.tenant;
+    // this.httpService.setCustomHeaders(loginContext.tenant);
+    // this.authenticationInterceptor.setTenantId(loginContext.tenant);
+    let httpParams = new HttpParams();
+    httpParams = httpParams.set('username', loginContext.username);
+    httpParams = httpParams.set('password', loginContext.password);
+    httpParams = httpParams.set('tenantIdentifier', loginContext.tenant);
+
+    this.onLoginSuccess({} as any);
+    return of(true);
   }
 
   /**
@@ -173,8 +189,8 @@ export class AuthenticationService {
    */
   public refreshOAuthAccessToken() {
     const oAuthData = JSON.parse(this.getStoreageItem(this.oAuthTokenDetailsStorageKey));
-    const oAuthRefreshToken = oAuthData.refresh_token;
-    this.tenantId = JSON.parse(this.getStoreageItem(this.credentialsStorageKey)).tenantId;
+    const oAuthRefreshToken = ''; // oAuthData.refresh_token;
+    // this.tenantId = 'default'; //JSON.parse(this.getStoreageItem(this.credentialsStorageKey)).tenantId;
     let httpParams = new HttpParams();
     httpParams = httpParams.set('grant_type', 'refresh_token');
     httpParams = httpParams.set('refresh_token', oAuthRefreshToken);

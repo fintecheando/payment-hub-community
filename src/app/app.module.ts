@@ -17,6 +17,8 @@ import { environment } from 'environments/environment';
 /** Main Component */
 import { WebAppComponent } from './web-app.component';
 
+import { HttpService } from './core/http/http.service';
+
 /** Not Found Component */
 import { NotFoundComponent } from './not-found/not-found.component';
 
@@ -63,8 +65,10 @@ export function initConfig(config: AppConfig) {
     PaymentHubModule,
     AppRoutingModule,
   ],
+  exports: [TranslateModule],
   declarations: [WebAppComponent, NotFoundComponent],
   providers: [AppConfig,
+    HttpService,
     {
       provide: APP_INITIALIZER,
       useFactory: initConfig,

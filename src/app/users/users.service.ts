@@ -1,9 +1,11 @@
 /** Angular Imports */
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpParams } from '@angular/common/http';
 
 /** rxjs Imports */
 import { Observable } from 'rxjs';
+
+import { HttpService } from 'app/core/http/http.service';
 
 /**
  * Users service.
@@ -16,20 +18,20 @@ export class UsersService {
   /**
    * @param {HttpClient} http Http Client to send requests.
    */
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpService) { }
 
   /**
    * @returns {Observable<any>} Users data
    */
   getUsers(): Observable<any> {
-    return this.http.get('/users');
+    return this.http.disableApiPrefix().get('/users', {headers: this.http.getCustomHeaders()});
   }
 
   /**
    * @returns {Observable<any>} Users template data
    */
   getUsersTemplate(): Observable<any> {
-    return this.http.get('/users/template');
+    return this.http.disableApiPrefix().get('/users/template', {headers: this.http.getCustomHeaders()});
   }
 
   /**
@@ -37,7 +39,7 @@ export class UsersService {
    * @returns {Observable<any>}
    */
   createUser(user: any): Observable<any> {
-    return this.http.post('/users', user);
+    return this.http.disableApiPrefix().post('/users', user, {headers: this.http.getCustomHeaders()});
   }
 
   /**
@@ -45,7 +47,7 @@ export class UsersService {
    * @returns {Observable<any>} User.
    */
   getUser(userId: string): Observable<any> {
-    return this.http.get(`/users/${userId}`);
+    return this.http.disableApiPrefix().get(`/users/${userId}`, {headers: this.http.getCustomHeaders()});
   }
 
   /**
@@ -53,7 +55,7 @@ export class UsersService {
    * @returns {Observable<any>}
    */
   deleteUser(userId: string): Observable<any> {
-    return this.http.delete(`/users/${userId}`);
+    return this.http.disableApiPrefix().delete(`/users/${userId}`, {headers: this.http.getCustomHeaders()});
   }
 
   /**
@@ -63,7 +65,7 @@ export class UsersService {
   getStaff(officeId: any): Observable<any> {
     const httpParams = new HttpParams()
       .set('officeId', officeId.toString());
-    return this.http.get('/staff', { params: httpParams });
+    return this.http.disableApiPrefix().get('/staff', { params: httpParams, headers: this.http.getCustomHeaders()});
   }
 
 }

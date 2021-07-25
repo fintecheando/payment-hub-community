@@ -30,7 +30,7 @@ export class TransactionsService {
    * Gets all the filtered transactions.
    *
    */
-  getTransactions(fields: any, page: number, count: number): Observable<Transactions> {
+  getTransactionsTmp(fields: any, page: number, count: number): Observable<Transactions> {
     let params = '';
     fields.forEach((field: any) => {
       if (field.value !== undefined && field.value !== null && field.value !== '') {
@@ -39,6 +39,21 @@ export class TransactionsService {
     });
     params += 'page=' + page + '&size=' + count;
     return this.http.get('/api/v1/transfers?' + params).pipe(map((transactions: any) => transactions as Transactions));
+  }
+
+  getTransactions(fields: any, page: number, count: number): Observable<Transactions> {
+    let params = '';
+    fields.forEach((field: any) => {
+    if (field.value !== undefined && field.value !== null && field.value !== '') {
+        params += field.type + '=' + field.value + '&';
+    }
+    });
+    params += 'page=' + page + '&size=' + count;
+    
+    return this.http
+    .disableApiPrefix()
+    .get('/assets/mock/payment-hub/transactions.mock.json?' + params)
+    .pipe(map((transactions: any) => transactions as Transactions));
   }
 
   getDfspEntries(): Observable<DfspEntry[]> {
@@ -56,10 +71,16 @@ export class TransactionsService {
    * Get details of a Transaction.
    *
    */
-  getTransactionDetail(id: string): Observable<TransactionDetails> {
+  getTransactionDetailTmp(id: string): Observable<TransactionDetails> {
     return this.http.get('/api/v1/transfer/' + id).pipe(map((transaction: any) => transaction as TransactionDetails));
   }
 
+  getTransactionDetail(id: string): Observable<TransactionDetails> {
+    return this.http
+        .disableApiPrefix()
+        .get('/assets/mock/payment-hub/transaction-details.mock.json')
+        .pipe(map((transaction: TransactionDetails) => transaction as TransactionDetails));
+  }
 
   /**
    * Get currencies.

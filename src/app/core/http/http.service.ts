@@ -1,6 +1,6 @@
 /** Angular Imports */
 import { Inject, Injectable, InjectionToken, Injector, Optional } from '@angular/core';
-import { HttpClient, HttpEvent, HttpInterceptor, HttpHandler, HttpRequest } from '@angular/common/http';
+import { HttpClient, HttpEvent, HttpInterceptor, HttpHandler, HttpRequest, HttpHeaders } from '@angular/common/http';
 
 /** rxjs Imports */
 import { Observable } from 'rxjs';
@@ -74,6 +74,9 @@ export const HTTP_DYNAMIC_INTERCEPTORS = new InjectionToken<HttpInterceptor>('HT
 @Injectable()
 export class HttpService extends HttpClient {
 
+  fineractUrl: string;
+  headers: HttpHeaders;
+
   constructor(private httpHandler: HttpHandler,
               private injector: Injector,
               @Optional() @Inject(HTTP_DYNAMIC_INTERCEPTORS) private interceptors: HttpInterceptor[] = []) {
@@ -86,6 +89,7 @@ export class HttpService extends HttpClient {
         this.injector.get(ErrorHandlerInterceptor)
       ];
     }
+    this.fineractUrl = "https://backoffice.flexcore.mx";
   }
 
   cache(forceUpdate?: boolean): HttpClient {
@@ -99,6 +103,25 @@ export class HttpService extends HttpClient {
 
   disableApiPrefix(): HttpClient {
     return this.removeInterceptor(ApiPrefixInterceptor);
+  }
+
+  getFineractBaseUrl(): string {
+    return this.fineractUrl + "/api/v1";
+  }
+
+  setCustomHeaders(tenantId: string) {
+    this.headers = new HttpHeaders()
+      .set('Content-Type', 'application/json')
+      .set('Platform-TenantId', tenantId)
+      .set('Access-Control-Allow-Origin', '*')
+      .set('Authorization', "Basic bWlmb3NhZG1pbjpwYXNzd29yZA==");
+  }
+
+  getCustomHeaders(): HttpHeaders {
+    if (!this.headers) {
+      this.setCustomHeaders('tenant_default');
+    }
+    return this.headers;
   }
 
   /**

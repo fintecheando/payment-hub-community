@@ -10,14 +10,14 @@ export let environment = {
   name: "dev",
   production: false,
   version: env.npm_package_version + "-dev",
-  serverUrl: "",
+  serverUrl: "http://localhost:8800",
   oauth: {
-    enabled: "false", // For connecting to Mifos X using OAuth2 Authentication change the value to true
-    serverUrl: "",
+    enabled: "true", // For connecting to Mifos X using OAuth2 Authentication change the value to true
+    serverUrl: "http://localhost:8800",
     basicAuth: "false",
-    basicAuthToken: ''
+    basicAuthToken: 'bWlmb3NhZG1pbjpwYXNzd29yZA=='
   },
-  defaultLanguage: "en-US",
-  supportedLanguages: ["en-US", "fr-FR"],
+  defaultLanguage: "es-MX",
+  supportedLanguages: ["en-US", "es-MX"],
   externalConfigurationFile: ""
 };

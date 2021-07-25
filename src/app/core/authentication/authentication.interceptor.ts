@@ -36,12 +36,16 @@ export class AuthenticationInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
     this.retrieveAuthData();
+    this.setTenantId(this.authService.getTenantId());
+    return next.handle(this.injectToken(request));
+
     if (request.url.indexOf('/oauth/token') !== -1) {
       return next.handle(this.injectToken(request));
     }
     if (!this.authService.isLoggedIn) {
       this.removeAuthorization();
     }
+
     if (!request.url.startsWith('./') && this.accessExpired) {
       if (!this.refreshTokenInProgress) {
         this.refreshTokenInProgress = true;
@@ -77,8 +81,8 @@ export class AuthenticationInterceptor implements HttpInterceptor {
 
   retrieveAuthData() {
     this.setTenantId(this.authService.getTenantId());
-    this.setAuthorization(this.authService.getAuthorizationToken());
-    this.setAccessExpired(this.authService.isRefreshAccessToken());
+    // this.setAuthorization(this.authService.getAuthorizationToken());
+    // this.setAccessExpired(this.authService.isRefreshAccessToken());
   }
 
   injectToken(request: HttpRequest<any>) {

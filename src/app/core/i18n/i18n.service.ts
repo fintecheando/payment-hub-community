@@ -11,6 +11,7 @@ import { Logger } from '../logger/logger.service';
 import { includes } from 'lodash';
 import * as enUS from '../../../translations/en-US.json';
 import * as frFR from '../../../translations/fr-FR.json';
+import * as esMX from '../../../translations/es-MX.json';
 
 /** Initialize Logger */
 const log = new Logger('I18nService');
@@ -38,6 +39,7 @@ export class I18nService {
     // Embed languages to avoid extra HTTP requests
     translateService.setTranslation('en-US', enUS);
     translateService.setTranslation('fr-FR', frFR);
+    translateService.setTranslation('es-MX', esMX);
   }
 
   /**
@@ -50,6 +52,7 @@ export class I18nService {
     this.defaultLanguage = defaultLanguage;
     this.supportedLanguages = supportedLanguages;
     this.language = '';
+    this.translateService.setDefaultLang(defaultLanguage);
 
     this.translateService.onLangChange
       .subscribe((event: LangChangeEvent) => { localStorage.setItem(this.languageStorageKey, event.lang); });
