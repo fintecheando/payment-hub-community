@@ -1,5 +1,5 @@
 <div class="container m-b-20" fxLayout="row" fxLayoutAlign="end" fxLayoutGap="20px" [routerLink]="['add']">
-  <button mat-raised-button color="primary">
+    <button mat-raised-button color="primary">
     <fa-icon icon="plus"></fa-icon>&nbsp;&nbsp;
     {{'Add Role' | translate}}
   </button>
@@ -14,9 +14,9 @@
     </mat-form-field>
   </div>
 
-  <div class="mat-elevation-z8">
+    <div class="mat-elevation-z8">
 
-    <table mat-table [dataSource]="dataSource" matSort>
+        <table mat-table [dataSource]="dataSource" matSort>
 
       <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'Name' | translate}} </th>
@@ -38,13 +38,13 @@
         </td>
       </ng-container>
 
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="select-row"></tr>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="select-row"></tr>
 
-    </table>
+        </table>
 
-    <mat-paginator [pageSizeOptions]="[10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+        <mat-paginator [pageSizeOptions]="[10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
 
-  </div>
+    </div>
 
 </div>

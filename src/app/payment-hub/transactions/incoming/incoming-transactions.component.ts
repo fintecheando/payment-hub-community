@@ -19,8 +19,6 @@ import { TransactionsService } from '../service/transactions.service';
 import { DfspEntry } from '../model/dfsp.model';
 import { RetryResolveDialogComponent } from '../retry-resolve-dialog/retry-resolve-dialog.component';
 
-import mocker from 'mocker-data-generator';
-
 /**
  * Transactions component.
  */

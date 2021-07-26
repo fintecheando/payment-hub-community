@@ -24,11 +24,12 @@ export class SystemService {
   /**
    * @returns {Observable<any>} Fetches Roles and Permissions
    */
-  getRolesTmp(): Observable<any> {
-    return this.http.disableApiPrefix().get(this.http.getFineractBaseUrl() + '/roles', {headers: this.http.getCustomHeaders()});
+  getRoles(): Observable<any> {
+    //return this.http.disableApiPrefix().get(this.http.getFineractBaseUrl() + '/roles', {headers: this.http.getCustomHeaders()});
+    return this.http.disableApiPrefix().get(this.http.getDirectFineractBaseUrl() + '/roles', {headers: this.http.getDirectFineractHeaders()});
   }
 
-  getRoles(): Observable<any> {
+  getRolesMock(): Observable<any> {
     return this.http
      .disableApiPrefix()
       .get('/assets/mock/roles.mock.json');
@@ -39,7 +40,8 @@ export class SystemService {
    * @returns {Observable<any>}
    */
   createRole(role: any): Observable<any> {
-    return this.http.disableApiPrefix().post(this.http.getFineractBaseUrl() + '/roles', role, {headers: this.http.getCustomHeaders()});
+    //return this.http.disableApiPrefix().post(this.http.getFineractBaseUrl() + '/roles', role, {headers: this.http.getCustomHeaders()});
+    return this.http.disableApiPrefix().post(this.http.getDirectFineractBaseUrl() + '/roles', role, {headers: this.http.getDirectFineractHeaders()});
   }
 
   /**
@@ -63,7 +65,8 @@ export class SystemService {
         httpParams = httpParams.set(filter.type, filter.value);
       }
     });
-    return this.http.disableApiPrefix().get(this.http.getFineractBaseUrl() + '/audits', { params: httpParams, headers: this.http.getCustomHeaders() });
+    //return this.http.disableApiPrefix().get(this.http.getFineractBaseUrl() + '/audits', { params: httpParams, headers: this.http.getCustomHeaders() });
+    return this.http.disableApiPrefix().get(this.http.getDirectFineractBaseUrl() + '/audits', { params: httpParams, headers: this.http.getDirectFineractHeaders() });
   }
 
   getAuditTrails(filterBy: any, orderBy: string, sortOrder: string, offset: number, limit: number): Observable<any> {
@@ -76,11 +79,12 @@ export class SystemService {
    * @param {string} auditTrailId Audit Trail ID.
    * @returns {Observable<any>}
    */
-  getAuditTrailTmp(auditTrailId: string): Observable<any> {
-    return this.http.disableApiPrefix().get(this.http.getFineractBaseUrl() + `/audits/${auditTrailId}`, {headers: this.http.getCustomHeaders()});
+  getAuditTrail(auditTrailId: string): Observable<any> {
+    //return this.http.disableApiPrefix().get(this.http.getFineractBaseUrl() + `/audits/${auditTrailId}`, {headers: this.http.getCustomHeaders()});
+    return this.http.disableApiPrefix().get(this.http.getDirectFineractBaseUrl() + `/audits/${auditTrailId}`, {headers: this.http.getDirectFineractHeaders()});
   }
 
-  getAuditTrail(auditTrailId: string): Observable<any> {
+  getAuditTrailMock(auditTrailId: string): Observable<any> {
     return this.http
      .disableApiPrefix()
       .get('/assets/mock/audit.transaction.mock.json');
@@ -90,6 +94,8 @@ export class SystemService {
    * @returns {Observable<any>} Audit Trail Search Template.
    */
   getAuditTrailSearchTemplate(): Observable<any> {
+    //return this.http.disableApiPrefix().get(this.http.getFineractBaseUrl() + '/audits/searchtemplate', {headers: this.http.getCustomHeaders(), withCredentials: true});
+    //return this.http.disableApiPrefix().get(this.http.getDirectFineractBaseUrl() + '/audits/searchtemplate', {headers: this.http.getDirectFineractHeaders(), withCredentials: true});
     return this.http
      .disableApiPrefix()
       .get('/assets/mock/audittemplate.mock.json');
