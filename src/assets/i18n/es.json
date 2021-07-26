@@ -135,6 +135,28 @@
     "Submit": "Aceptar",
     "Role Description is": "El rol de la descripción es",
     "Role Name is": "El nombre del rol es",
-    "Add": "Agregar"
+    "Add": "Agregar",
+    "Download CSV": "Descargar CSV",
+    "Resource ID": "Recurso",
+    "User": "Usuario",
+    "Action": "Acción",
+    "Entity": "Entidad",
+    "Checker": "Validador",
+    "Maker From Date": "Realizado Desde la Fecha",
+    "Maker To Date": "Realizado Hasta la Fecha",
+    "Checker From Date": "Validado Desde la Fecha",
+    "Checked To Date": "Validado Hasta la Fecha",
+    "Trail ID": "Id Bitacora",
+    "Made By": "Realizado Por",
+    "Office": "Oficina",
+    "Made Date": "Fecha Realización",
+    "Checked Date": "Fecha Validación",
+    "processed": "procesada",
+    "ACTIONS": {
+        "CREATE": "Crear",
+        "UPDATE": "Actualizar",
+        "BLOCK": "Bloquear",
+        "UNBLOCK": "Desbloquear"
+    }
 
 }

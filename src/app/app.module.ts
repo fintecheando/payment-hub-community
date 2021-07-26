@@ -42,6 +42,7 @@ import { PaymentHubModule } from './payment-hub/paymenthub.module';
 /** Main Routing Module */
 import { AppRoutingModule } from './app-routing.module';
 import { MatPaginatorIntl } from '@angular/material';
+import { DatePipe } from '@angular/common';
 
 export function initConfig(config: AppConfig) {
   return () => config.load();
@@ -80,6 +81,7 @@ export function initConfig(config: AppConfig) {
   exports: [TranslateModule],
   declarations: [WebAppComponent, NotFoundComponent],
   providers: [AppConfig,
+    DatePipe,
     HttpService,
     {
       provide: APP_INITIALIZER,
