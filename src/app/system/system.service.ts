@@ -24,7 +24,8 @@ export class SystemService {
    * @returns {Observable<any>} Fetches Roles and Permissions
    */
   getRoles(): Observable<any> {
-    return this.http.disableApiPrefix().get(this.http.getFineractBaseUrl() + '/roles', {headers: this.http.getCustomHeaders()});
+    //return this.http.disableApiPrefix().get(this.http.getFineractBaseUrl() + '/roles', {headers: this.http.getCustomHeaders()});
+    return this.http.disableApiPrefix().get(this.http.getDirectFineractBaseUrl() + '/roles', {headers: this.http.getDirectFineractHeaders()});
   }
 
   /**
@@ -32,7 +33,8 @@ export class SystemService {
    * @returns {Observable<any>}
    */
   createRole(role: any): Observable<any> {
-    return this.http.disableApiPrefix().post(this.http.getFineractBaseUrl() + '/roles', role, {headers: this.http.getCustomHeaders()});
+    //return this.http.disableApiPrefix().post(this.http.getFineractBaseUrl() + '/roles', role, {headers: this.http.getCustomHeaders()});
+    return this.http.disableApiPrefix().post(this.http.getDirectFineractBaseUrl() + '/roles', role, {headers: this.http.getDirectFineractHeaders()});
   }
 
   /**
@@ -56,7 +58,8 @@ export class SystemService {
         httpParams = httpParams.set(filter.type, filter.value);
       }
     });
-    return this.http.disableApiPrefix().get(this.http.getFineractBaseUrl() + '/audits', { params: httpParams, headers: this.http.getCustomHeaders() });
+    //return this.http.disableApiPrefix().get(this.http.getFineractBaseUrl() + '/audits', { params: httpParams, headers: this.http.getCustomHeaders() });
+    return this.http.disableApiPrefix().get(this.http.getDirectFineractBaseUrl() + '/audits', { params: httpParams, headers: this.http.getDirectFineractHeaders() });
   }
 
   /**
@@ -64,14 +67,16 @@ export class SystemService {
    * @returns {Observable<any>}
    */
   getAuditTrail(auditTrailId: string): Observable<any> {
-    return this.http.disableApiPrefix().get(this.http.getFineractBaseUrl() + `/audits/${auditTrailId}`, {headers: this.http.getCustomHeaders()});
+    //return this.http.disableApiPrefix().get(this.http.getFineractBaseUrl() + `/audits/${auditTrailId}`, {headers: this.http.getCustomHeaders()});
+    return this.http.disableApiPrefix().get(this.http.getDirectFineractBaseUrl() + `/audits/${auditTrailId}`, {headers: this.http.getDirectFineractHeaders()});
   }
 
   /**
    * @returns {Observable<any>} Audit Trail Search Template.
    */
   getAuditTrailSearchTemplate(): Observable<any> {
-    return this.http.disableApiPrefix().get(this.http.getFineractBaseUrl() + '/audits/searchtemplate', {headers: this.http.getCustomHeaders(), withCredentials: true});
+    //return this.http.disableApiPrefix().get(this.http.getFineractBaseUrl() + '/audits/searchtemplate', {headers: this.http.getCustomHeaders(), withCredentials: true});
+    return this.http.disableApiPrefix().get(this.http.getDirectFineractBaseUrl() + '/audits/searchtemplate', {headers: this.http.getDirectFineractHeaders(), withCredentials: true});
   }
 
 }
