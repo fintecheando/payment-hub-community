@@ -24,8 +24,14 @@ export class SystemService {
   /**
    * @returns {Observable<any>} Fetches Roles and Permissions
    */
-  getRoles(): Observable<any> {
+  getRolesTmp(): Observable<any> {
     return this.http.disableApiPrefix().get(this.http.getFineractBaseUrl() + '/roles', {headers: this.http.getCustomHeaders()});
+  }
+
+  getRoles(): Observable<any> {
+    return this.http
+     .disableApiPrefix()
+      .get('/assets/mock/roles.mock.json');
   }
 
   /**
@@ -70,8 +76,14 @@ export class SystemService {
    * @param {string} auditTrailId Audit Trail ID.
    * @returns {Observable<any>}
    */
-  getAuditTrail(auditTrailId: string): Observable<any> {
+  getAuditTrailTmp(auditTrailId: string): Observable<any> {
     return this.http.disableApiPrefix().get(this.http.getFineractBaseUrl() + `/audits/${auditTrailId}`, {headers: this.http.getCustomHeaders()});
+  }
+
+  getAuditTrail(auditTrailId: string): Observable<any> {
+    return this.http
+     .disableApiPrefix()
+      .get('/assets/mock/audit.transaction.mock.json');
   }
 
   /**

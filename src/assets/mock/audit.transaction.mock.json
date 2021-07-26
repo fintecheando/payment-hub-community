@@ -1,0 +1,14 @@
+{
+    "id": 1981865,
+    "actionName": "CREATE",
+    "entityName": "ACCOUNTTRANSFER",
+    "resourceId": 660043,
+    "maker": "5534342388",
+    "madeOnDate": 1627335252000,
+    "processingResult": "processed",
+    "commandAsJson": "{\"beneficiaryName\":\"GUSTAVO ESPINDOLA PEREZ\",\"originAccount\":\"*******3543\",\"destinationAccount\":\"*******6044\",\"amount\":250.0,\"concept\":\"PAGOS PRUEBA\",\"reference\":\"8646564\",\"numberOperation\":660043.0,\"transferBetweenOwnAccounts\":false}",
+    "clientName": "WARREN BUFFET",
+    "savingsAccountNo": "85624493543",
+    "clientId": 27120013,
+    "url": "/accounttransfers"
+  }

@@ -118,6 +118,7 @@
   "Transaction Task List": "Transaction Task List",
   "Payment Process Id": "Payment Process Id",
   "Time": "Time",
+  "Date": "Date",
   "Task Id": "Task Id",
   "Task Type": "Task Type",
   "Transaction Business Attributes": "Transaction Business Attributes",
@@ -144,7 +145,17 @@
     "UPDATE": "Update",
     "BLOCK": "Block",
     "UNBLOCK": "UnBlock"
-  }
+  },
+  "Command": "Command",
+  "Command Value": "Command Value",
+  "Group Level": "Group Level",
+  "Savings Account No": "Savings Account No",
+  "Roles and Permissions": "Roles and Permissions",
+  "Filter": "Filter",
+  "Add Role": "Add Role",
+  "Cancel": "Cancel",
+  "Submit": "Submit",
+  "Add": "Add"
 
 
 

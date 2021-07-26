@@ -118,6 +118,7 @@
   "Transaction Task List": "Lista de Tareas de Transacción",
   "Payment Process Id": "Id del Proceso de Pago",
   "Time": "Hora",
+  "Date": "Fecha",
   "Task Id": "Id Tarea",
   "Task Type": "Tipo Tarea",
   "Transaction Business Attributes": "Atributos de la Transacción del Negocio",
@@ -149,7 +150,17 @@
     "UPDATE": "Actualizar",
     "BLOCK": "Bloquear",
     "UNBLOCK": "Desbloquear"
-  }
+  },
+  "Command": "Parámetro",
+  "Command Value": "Valor",
+  "Group Level": "Nivel de Grupo",
+  "Savings Account No": "Número de Cuenta",
+  "Roles and Permissions": "Perfiles y Permisos",
+  "Filter": "Filtro",
+  "Add Role": "Agregar Role",
+  "Cancel": "Cancelar",
+  "Submit": "Aceptar",
+  "Add": "Agregar"
 
 
 }
