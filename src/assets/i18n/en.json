@@ -122,6 +122,31 @@
   "Task Type": "Task Type",
   "Transaction Business Attributes": "Transaction Business Attributes",
   "Name": "Name",
-  "Value": "Value"
+  "Value": "Value",
+  "Download CSV": "Download CSV",
+  "Resource ID": "Resource ID",
+  "User": "User",
+  "Action": "Action",
+  "Entity": "Entity",
+  "Checker": "Checker",
+  "Maker From Date": "Maker From Date",
+  "Maker To Date": "Maker To Date",
+  "Checker From Date": "Checker From Date",
+  "Checked To Date": "Checked To Date",
+  "Trail ID": "Trail ID",
+  "Made By": "Made By",
+  "Office": "Office",
+  "Made Date": "Made Date",
+  "Checked Date": "Checked Date",
+  "processed": "processed",
+  "ACTIONS": {
+    "CREATE": "Create",
+    "UPDATE": "Update",
+    "BLOCK": "Block",
+    "UNBLOCK": "UnBlock"
+  }
+
+
+
 
 }

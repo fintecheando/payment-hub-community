@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 
 import { HttpService } from 'app/core/http/http.service';
 
+
 /**
  * System service.
  */
@@ -43,7 +44,7 @@ export class SystemService {
    * @param {number} limit Number of entries within the page.
    * @returns {Observable<any>} Audit Trails.
    */
-  getAuditTrails(filterBy: any, orderBy: string, sortOrder: string, offset: number, limit: number): Observable<any> {
+  getAuditTrailsTmp(filterBy: any, orderBy: string, sortOrder: string, offset: number, limit: number): Observable<any> {
     let httpParams = new HttpParams()
       .set('offset', offset.toString())
       .set('limit', limit.toString())
@@ -59,6 +60,12 @@ export class SystemService {
     return this.http.disableApiPrefix().get(this.http.getFineractBaseUrl() + '/audits', { params: httpParams, headers: this.http.getCustomHeaders() });
   }
 
+  getAuditTrails(filterBy: any, orderBy: string, sortOrder: string, offset: number, limit: number): Observable<any> {
+    return this.http
+     .disableApiPrefix()
+      .get('/assets/mock/audits.mock.json');
+  }
+
   /**
    * @param {string} auditTrailId Audit Trail ID.
    * @returns {Observable<any>}
@@ -71,7 +78,9 @@ export class SystemService {
    * @returns {Observable<any>} Audit Trail Search Template.
    */
   getAuditTrailSearchTemplate(): Observable<any> {
-    return this.http.disableApiPrefix().get(this.http.getFineractBaseUrl() + '/audits/searchtemplate', {headers: this.http.getCustomHeaders(), withCredentials: true});
+    return this.http
+     .disableApiPrefix()
+      .get('/assets/mock/audittemplate.mock.json');
   }
 
 }
