@@ -21,6 +21,9 @@ import { WebAppComponent } from './web-app.component';
 
 import { HttpService } from './core/http/http.service';
 
+import { MatTableModule } from '@angular/material';
+import { MatSortModule } from '@angular/material/sort';
+
 /** Not Found Component */
 import { NotFoundComponent } from './not-found/not-found.component';
 
@@ -71,6 +74,8 @@ export function initConfig(config: AppConfig) {
     UsersModule,
     PaymentHubModule,
     AppRoutingModule,
+    MatTableModule,
+    MatSortModule
   ],
   exports: [TranslateModule],
   declarations: [WebAppComponent, NotFoundComponent],

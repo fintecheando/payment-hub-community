@@ -37,9 +37,7 @@ export class LanguageSelectorComponent implements OnInit {
    * @param {string} language New language.
    */
   setLanguage() {
-    console.log("Setting ", this.languageSelector.value);
     this.translate.use(this.languageSelector.value);
-    console.log("Current " + this.currentLanguage);
   }
 
   /**

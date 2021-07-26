@@ -201,6 +201,8 @@ export class TransactionDetailsComponent implements OnInit {
       data: {
         datasource: this.datasource
       },
+      height: '60%',
+      width: '80%'
     });
   }
 

@@ -1,6 +1,8 @@
 /** Angular Imports */
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
-import { MatDialog, MatSort, MatPaginator, MatTableDataSource } from '@angular/material';
+import { MatDialog, MatPaginator, MatTableDataSource } from '@angular/material';
+import {MatSort, Sort} from '@angular/material/sort';
+
 import { FormControl } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 
