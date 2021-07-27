@@ -157,6 +157,11 @@
         "UPDATE": "Actualizar",
         "BLOCK": "Bloquear",
         "UNBLOCK": "Desbloquear"
-    }
+    },
+    "Date": "Fecha",
+    "Savings Account No": "Nº de Cuenta de Ahorro",
+    "Group Level": "Nivel de Grupo",
+    "Command": "Comando",
+    "Command Value": "Valor del Comando"
 
 }

@@ -123,9 +123,19 @@
     "Transaction Business Attributes": "Transaction Business Attributes",
     "Name": "Name",
     "Value": "Value",
+    "Currencies": {
+        "Mexican Peso": "Mexican Peso",
+        "US Dollar": "US Dollar",
+        "Euro": "Euro"
+    },
     "Roles and Permissions": "Roles and Permissions",
     "Filter": "Filter",
     "Add Role": "Add Role",
+    "Cancel": "Cancel",
+    "Submit": "Acept",
+    "Role Description is": "Role Description is",
+    "Role Name is": "Role Name is",
+    "Add": "Add",
     "Download CSV": "Download CSV",
     "Resource ID": "Resource ID",
     "User": "User",
@@ -147,5 +157,11 @@
         "UPDATE": "Update",
         "BLOCK": "Block",
         "UNBLOCK": "UnBlock"
-    }
+    },
+    "Date": "Date",
+    "Savings Account No": "Savings Account No",
+    "Group Level": "Group Level",
+    "Command": "Comando",
+    "Command Value": "Valor del Comando"
+
 }
