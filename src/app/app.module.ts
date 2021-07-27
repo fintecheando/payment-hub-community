@@ -43,6 +43,7 @@ import { PaymentHubModule } from './payment-hub/paymenthub.module';
 import { AppRoutingModule } from './app-routing.module';
 import { MatPaginatorIntl } from '@angular/material';
 import { DatePipe } from '@angular/common';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 export function initConfig(config: AppConfig) {
   return () => config.load();
@@ -55,6 +56,7 @@ export function initConfig(config: AppConfig) {
  */
 @NgModule({
   imports: [
+    FlexLayoutModule,
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,

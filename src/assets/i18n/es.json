@@ -41,6 +41,7 @@
     "Failed": "Fallida",
     "Completed": "Completada",
     "In progress": "En progreso",
+    "IN_PROGRESS": "En progreso",
     "Incoming Transactions": "Transacciones Entrantes",
     "Outgoing Transactions": "Transacciones Salientes",
     "Search Incoming Transactions": "Buscar Transacciones Entrantes",
@@ -97,8 +98,8 @@
     "Close": "Cerrar",
     "Id Type": "Tipo Identificador",
     "Id": "Identificador",
-    "DFSP Id": "Id DFSP",
-    "DFSP Name": "Nombre DFSP",
+    "DFSP Id": "Id Banco",
+    "DFSP Name": "Nombre Banco",
     "Date of Birth": "Fecha de Nacimiento",
     "Last Name": "Apellido",
     "First Name": "Nombre",
@@ -166,5 +167,6 @@
     "Transactions": "Transacciones",
     "Channel SPEI": "Canal de SPEI",
     "Channel SPID": "Canal de SPID",
-    "Channel TEF": "Canal de TEF"
+    "Channel TEF": "Canal de TEF",
+    "Tax Id": "R.F.C"
 }

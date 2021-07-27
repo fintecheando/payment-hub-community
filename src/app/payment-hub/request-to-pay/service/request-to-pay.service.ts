@@ -29,17 +29,15 @@ export class RequestToPayService {
       .get('/assets/mock/payment-hub/requests.mock.json');
   }
 
-  /*
-  getRequestToPay(requestId: string): Observable<any> {
+  getRequestToPayTmp(requestId: string): Observable<any> {
     return this.httpService.disableApiPrefix().get(this.httpService.getPaymentHubBaseUrl() + '/api/v1/transactionRequest/${requestId}', 
       {headers: this.httpService.getTenantHeaders()});
   }
-  */
 
   getRequestToPay(id: string): Observable<any> {
     return this.httpService
      .disableApiPrefix()
-      .get('/assets/mock/payment-hub/transaction-details.mock.json');
+      .get('/assets/mock/payment-hub/request-details.mock.json');
   }
 
 }
