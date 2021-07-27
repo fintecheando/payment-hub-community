@@ -1,15 +1,15 @@
 <div class="container">
-  <mat-grid-list cols="2" rowHeight="350">
+  <mat-grid-list cols="2" rowHeight="450">
     <mat-grid-tile [colspan]="1"
     [rowspan]="1">
     <mat-card class="mat-elevation-z8" *ngIf="datasource.transactionRequest">
-      <mat-card-title>Payer</mat-card-title>
+      <mat-card-title>{{'Payer' | translate}}</mat-card-title>
       <mat-card-content>
 
         <div fxLayout="row wrap" class="content">
 
           <div fxFlex="50%" fxFlex.lt-md="50%" class="header" *ngIf="datasource.transactionRequest.payerPartyIdType!==undefined">
-            Id Type
+            {{'Id Type' | translate}}
           </div>
 
           <div fxFlex="50%" fxFlex.lt-md="50%" *ngIf="datasource.transactionRequest.payerPartyIdType!==undefined">
@@ -17,7 +17,7 @@
           </div>
 
           <div fxFlex="50%" fxFlex.lt-md="50%" class="header" *ngIf="datasource.transactionRequest.payerPartyId!==undefined">
-            Id
+            {{'Id' | translate}}
           </div>
 
           <div fxFlex="50%" fxFlex.lt-md="50%" *ngIf="datasource.transactionRequest.payerPartyId!==undefined">
@@ -25,7 +25,7 @@
           </div>
 
           <div fxFlex="50%" fxFlex.lt-md="50%" class="header" *ngIf="datasource.transactionRequest.payerDfspId!==undefined">
-            DFSP Id
+            {{'DFSP Id' | translate}}
           </div>
 
           <div fxFlex="50%" fxFlex.lt-md="50%" *ngIf="datasource.transactionRequest.payerDfspId!==undefined">
@@ -33,23 +33,23 @@
           </div>
 
           <div fxFlex="50%" fxFlex.lt-md="50%" class="header" *ngIf="datasource.transactionRequest.payerDfspId!==undefined">
-            DFSP Name
+            {{'DFSP Name' | translate}}
           </div>
 
           <div fxFlex="50%" fxFlex.lt-md="50%" *ngIf="datasource.transactionRequest.payerDfspId!==undefined">
             {{ displayDfspName(getDfpsEntry(datasource.transactionRequest.payerDfspId))}}
           </div>
 
-          <div fxFlex="50%" fxFlex.lt-md="50%" class="header" *ngIf="datasource.transactionRequest.payerDateOfBirth!==undefined">
-            Date of Birth
+          <div fxFlex="50%" fxFlex.lt-md="50%" class="header" *ngIf="datasource.transactionRequest.payerTaxId!==undefined">
+            {{'Tax Id' | translate}}
           </div>
 
-          <div fxFlex="50%" fxFlex.lt-md="50%" *ngIf="datasource.transactionRequest.payerDateOfBirth!==undefined">
-            {{ datasource.transactionRequest.payerDateOfBirth }}
+          <div fxFlex="50%" fxFlex.lt-md="50%" *ngIf="datasource.transactionRequest.payerTaxId!==undefined">
+            {{ datasource.transactionRequest.payerTaxId }}
           </div>
 
           <div fxFlex="50%" fxFlex.lt-md="50%" class="header" *ngIf="datasource.transactionRequest.payerLastName!==undefined">
-            Last Name
+            {{'Last Name' | translate}}
           </div>
 
           <div fxFlex="50%" fxFlex.lt-md="50%" *ngIf="datasource.transactionRequest.payerLastName!==undefined">
@@ -57,7 +57,7 @@
           </div>
 
           <div fxFlex="50%" fxFlex.lt-md="50%" class="header" *ngIf="datasource.transactionRequest.payerFirstName!==undefined">
-            First Name
+            {{'First Name' | translate}}
           </div>
 
           <div fxFlex="50%" fxFlex.lt-md="50%" *ngIf="datasource.transactionRequest.payerFirstName!==undefined">
@@ -72,13 +72,13 @@
   <mat-grid-tile [colspan]="1"
     [rowspan]="1">
     <mat-card class="mat-elevation-z8" *ngIf="datasource.transactionRequest">
-      <mat-card-title>Payee</mat-card-title>
+      <mat-card-title>{{'Payee' | translate}}</mat-card-title>
       <mat-card-content>
 
         <div fxLayout="row wrap" class="content">
 
           <div fxFlex="50%" fxFlex.lt-md="50%" class="header" *ngIf="datasource.transactionRequest.payeePartyIdType!==undefined">
-            Id Type
+            {{'Id Type' | translate}}
           </div>
 
           <div fxFlex="50%" fxFlex.lt-md="50%" *ngIf="datasource.transactionRequest.payeePartyIdType!==undefined">
@@ -86,7 +86,7 @@
           </div>
 
           <div fxFlex="50%" fxFlex.lt-md="50%" class="header" *ngIf="datasource.transactionRequest.payeePartyId!==undefined">
-            Id
+            {{'Id' | translate}}
           </div>
 
           <div fxFlex="50%" fxFlex.lt-md="50%" *ngIf="datasource.transactionRequest.payeePartyId!==undefined">
@@ -94,7 +94,7 @@
           </div>
 
           <div fxFlex="50%" fxFlex.lt-md="50%" class="header" *ngIf="datasource.transactionRequest.payeeDfspId!==undefined">
-            DFSP Id
+            {{'DFSP Id' | translate}}
           </div>
 
           <div fxFlex="50%" fxFlex.lt-md="50%" *ngIf="datasource.transactionRequest.payeeDfspId!==undefined">
@@ -102,23 +102,23 @@
           </div>
 
           <div fxFlex="50%" fxFlex.lt-md="50%" class="header" *ngIf="datasource.transactionRequest.payeeDfspId!==undefined">
-            DFSP Name
+            {{'DFSP Name' | translate}}
           </div>
 
           <div fxFlex="50%" fxFlex.lt-md="50%" *ngIf="datasource.transactionRequest.payeeDfspId!==undefined">
             {{ displayDfspName(getDfpsEntry(datasource.transactionRequest.payeeDfspId)) }}
           </div>
 
-          <div fxFlex="50%" fxFlex.lt-md="50%" class="header" *ngIf="datasource.transactionRequest.payeeDateOfBirth!==undefined">
-            Date of Birth
+          <div fxFlex="50%" fxFlex.lt-md="50%" class="header" *ngIf="datasource.transactionRequest.payeeTaxId!==undefined">
+            {{'Tax Id' | translate}}
           </div>
 
-          <div fxFlex="50%" fxFlex.lt-md="50%" *ngIf="datasource.transactionRequest.payeeDateOfBirth!==undefined">
-            {{ datasource.transactionRequest.payeeDateOfBirth }}
+          <div fxFlex="50%" fxFlex.lt-md="50%" *ngIf="datasource.transactionRequest.payeeTaxId!==undefined">
+            {{ datasource.transactionRequest.payeeTaxId }}
           </div>
 
           <div fxFlex="50%" fxFlex.lt-md="50%" class="header" *ngIf="datasource.transactionRequest.payeeLastName!==undefined">
-            Last Name
+            {{'Last Name' | translate}}
           </div>
 
           <div fxFlex="50%" fxFlex.lt-md="50%" *ngIf="datasource.transactionRequest.payeeLastName!==undefined">
@@ -126,7 +126,7 @@
           </div>
 
           <div fxFlex="50%" fxFlex.lt-md="50%" class="header" *ngIf="datasource.transactionRequest.payeeFirstName!==undefined">
-            First Name
+            {{'First Name' | translate}}
           </div>
 
           <div fxFlex="50%" fxFlex.lt-md="50%" *ngIf="datasource.transactionRequest.payeeFirstName!==undefined">
@@ -138,17 +138,17 @@
     </mat-card>
   </mat-grid-tile>
 </mat-grid-list>
-<mat-grid-list cols="2" rowHeight="450">
+<mat-grid-list cols="2" rowHeight="350">
   <mat-grid-tile [colspan]="1"
     [rowspan]="1">
-    <mat-card class="mat-elevation-z8" *ngIf="datasource.transactionRequest">
-      <mat-card-title>Transfer</mat-card-title>
+    <mat-card class="mat-elevation-z8" style="min-height: 300px;" *ngIf="datasource.transactionRequest">
+      <mat-card-title>{{'Transfer' | translate}}</mat-card-title>
       <mat-card-content>
 
         <div fxLayout="row wrap" class="content">
 
           <div fxFlex="50%" fxFlex.lt-md="50%" class="header" *ngIf="datasource.transactionRequest.transactionId!==undefined">
-            Transfer Code
+            {{'Transaction ID' | translate}}
           </div>
 
           <div fxFlex="50%" fxFlex.lt-md="50%" *ngIf="datasource.transactionRequest.transactionId!==undefined">
@@ -156,7 +156,7 @@
           </div>
 
           <div fxFlex="50%" fxFlex.lt-md="50%" class="header" *ngIf="datasource.transactionRequest.amount!==undefined">
-            Transfer Amount
+            {{'Transfer Amount' | translate}}
           </div>
 
           <div fxFlex="50%" fxFlex.lt-md="50%" *ngIf="datasource.transactionRequest.amount!==undefined">
@@ -164,7 +164,7 @@
           </div>
 
           <div fxFlex="50%" fxFlex.lt-md="50%" class="header" *ngIf="datasource.transactionRequest.currency!==undefined">
-            Transfer Currency
+            {{'Transfer Currency' | translate}}
           </div>
 
           <div fxFlex="50%" fxFlex.lt-md="50%" *ngIf="datasource.transactionRequest.currency!==undefined">
@@ -172,7 +172,7 @@
           </div>
 
           <div fxFlex="50%" fxFlex.lt-md="50%" class="header" *ngIf="datasource.transactionRequest.feeType!==undefined">
-            Fee Type
+            {{'Fee Type' | translate}}
           </div>
 
           <div fxFlex="50%" fxFlex.lt-md="50%" *ngIf="datasource.transactionRequest.feeType!==undefined">
@@ -180,17 +180,17 @@
           </div>
 
           <div fxFlex="50%" fxFlex.lt-md="50%" class="header" *ngIf="datasource.transactionRequest.completedAt!==undefined">
-            Transfer Completed
+            {{'Transfer Completed' | translate}}
           </div>
 
           <div fxFlex="50%" fxFlex.lt-md="50%" *ngIf="datasource.transactionRequest.completedAt!==undefined">
             {{ formatDate(datasource.transactionRequest.completedAt) }}
           </div>
           <div fxFlex="50%" fxFlex.lt-md="50%" class="header" *ngIf="datasource.transactionRequest.completedAt!==undefined">
-            Transfer Status
+            {{'Transfer Status' | translate}}
           </div>
 
-          <div fxFlex="50%" fxFlex.lt-md="50%" *ngIf="datasource.transactionRequest.state!==undefined" [ngClass]="{'red': datasource.transactionRequest.state==='FAILED','green': datasource.transactionRequest.state==='ACCEPTED','orange': datasource.transactionRequest.state==='IN_PROGRESS'}">{{datasource.transactionRequest.state}}
+          <div fxFlex="50%" fxFlex.lt-md="50%" *ngIf="datasource.transactionRequest.status!==undefined" [ngClass]="{'red': datasource.transactionRequest.status==='FAILED','green': datasource.transactionRequest.status==='ACCEPTED','orange': datasource.transactionRequest.status==='IN_PROGRESS'}">{{datasource.transactionRequest.status | translate}}
           </div>
         </div>
       </mat-card-content>
@@ -198,14 +198,14 @@
   </mat-grid-tile>
   <mat-grid-tile [colspan]="1"
   [rowspan]="1">
-  <mat-card class="mat-elevation-z8" *ngIf="datasource.transactionRequest">
-    <mat-card-title>Fees</mat-card-title>
+  <mat-card class="mat-elevation-z8" style="min-height: 300px;" *ngIf="datasource.transactionRequest">
+    <mat-card-title>{{'Fees' | translate}}</mat-card-title>
     <mat-card-content>
 
       <div fxLayout="row wrap" class="content">
 
         <div fxFlex="50%" fxFlex.lt-md="50%" class="header" *ngIf="datasource.transactionRequest.payerQuoteCode!==undefined">
-          Payer quote code
+          {{'Payer quote code' | translate}}
         </div>
 
         <div fxFlex="50%" fxFlex.lt-md="50%" *ngIf="datasource.transactionRequest.payerQuoteCode!==undefined">
@@ -213,7 +213,7 @@
         </div>
 
         <div fxFlex="50%" fxFlex.lt-md="50%" class="header" *ngIf="datasource.transactionRequest.payerFee!==undefined">
-          Payer fee
+          {{'Payer fee' | translate}}
         </div>
 
         <div fxFlex="50%" fxFlex.lt-md="50%" *ngIf="datasource.transactionRequest.payerFee!==undefined">
@@ -221,7 +221,7 @@
         </div>
 
         <div fxFlex="50%" fxFlex.lt-md="50%" class="header" *ngIf="datasource.transactionRequest.payeeQuoteCode!==undefined">
-          Payee quote code
+          {{'Payee quote code' | translate}}
         </div>
 
         <div fxFlex="50%" fxFlex.lt-md="50%" *ngIf="datasource.transactionRequest.payeeQuoteCode!==undefined">
@@ -229,7 +229,7 @@
         </div>
 
         <div fxFlex="50%" fxFlex.lt-md="50%" class="header" *ngIf="datasource.transactionRequest.payeeFee!==undefined">
-          Payee fee
+          {{'Payee fee' | translate}}
         </div>
 
         <div fxFlex="50%" fxFlex.lt-md="50%" *ngIf="datasource.transactionRequest.payeeFee!==undefined">
@@ -247,11 +247,11 @@
 
   <table mat-table [dataSource]="taskList" multiTemplateDataRows matSort>
     <ng-container matColumnDef="payment-task-list">
-      <th mat-header-cell *matHeaderCellDef colspan="4"> Transaction Task List </th>
+      <th mat-header-cell *matHeaderCellDef colspan="4"> {{'Transaction Task List' | translate}} </th>
     </ng-container>
 
     <ng-container matColumnDef="payment-process-id">
-      <th mat-header-cell *matHeaderCellDef > Payment Process Id </th>
+      <th mat-header-cell *matHeaderCellDef > {{'Payment Process Id' | translate}} </th>
     </ng-container>
 
     <ng-container matColumnDef="payment-process-id-value">
@@ -259,23 +259,23 @@
     </ng-container>
 
     <ng-container matColumnDef="timestamp">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Time (UTC) </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'Time' | translate}} (UTC) </th>
       <td mat-cell *matCellDef="let transaction"> {{ formatDate(convertTimestampToDate(transaction.timestamp)) }} </td>
     </ng-container>
 
     <ng-container matColumnDef="elementId">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Task Id </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'Task Id' | translate}} </th>
       <td mat-cell *matCellDef="let transaction"> {{ transaction.elementId }} </td>
     </ng-container>
 
     <ng-container matColumnDef="type">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Task Type</th>
-      <td mat-cell *matCellDef="let transaction"> {{ transaction.type }} </td>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'Task Type' | translate}}</th>
+      <td mat-cell *matCellDef="let transaction"> {{ transaction.type | translate }} </td>
     </ng-container>
 
     <ng-container matColumnDef="intent">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
-      <td mat-cell *matCellDef="let transaction" [ngClass]="{'orange': transaction.intent==='CREATED','blue': transaction.intent==='ACTIVATED','green': transaction.intent==='COMPLETED'}"> {{ transaction.intent }} </td>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'Status' | translate}} </th>
+      <td mat-cell *matCellDef="let transaction" [ngClass]="{'orange': transaction.intent==='CREATED','blue': transaction.intent==='ACTIVATED','green': transaction.intent==='COMPLETED','orange': transaction.intent==='IN_PROGRESS'}"> {{ transaction.intent | translate }} </td>
     </ng-container>
 
     <ng-container matColumnDef="actions">
@@ -299,23 +299,23 @@
         <table mat-table [dataSource]="transaction.datasource" matSort> 
         
           <ng-container matColumnDef="timestamp">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Time (UTC) </th>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'Time' | translate}} (UTC) </th>
             <td mat-cell *matCellDef="let transaction"> {{ formatDate(convertTimestampToDate(transaction.timestamp)) }} </td>
           </ng-container>
 
           <ng-container matColumnDef="elementId">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Task Id </th>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'Task Id' | translate}} </th>
             <td mat-cell *matCellDef="let transaction"> {{ transaction.elementId }} </td>
           </ng-container>
 
           <ng-container matColumnDef="type">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Task Type</th>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'Task Type' | translate}}</th>
             <td mat-cell *matCellDef="let transaction"> {{ transaction.type }} </td>
           </ng-container>
 
           <ng-container matColumnDef="intent">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
-            <td mat-cell *matCellDef="let transaction" [ngClass]="{'orange': transaction.intent==='CREATED','blue': transaction.intent==='ACTIVATED','green': transaction.intent==='COMPLETED'}"> {{ transaction.intent }} </td>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'Status' | translate}} </th>
+            <td mat-cell *matCellDef="let transaction" [ngClass]="{'orange': transaction.intent==='CREATED','blue': transaction.intent==='ACTIVATED','green': transaction.intent==='COMPLETED','orange': transaction.intent==='IN_PROGRESS'}"> {{ transaction.intent | translate }} </td>
           </ng-container>
 
           <tr mat-header-row *matHeaderRowDef="displayedColumnsDetailsTable"></tr>
@@ -345,21 +345,21 @@
 
   <table mat-table [dataSource]="businessAttributes" matSort>
     <ng-container matColumnDef="payment-business-attributes">
-      <th mat-header-cell *matHeaderCellDef colspan="3"> Transaction Business Attributes </th>
+      <th mat-header-cell *matHeaderCellDef colspan="3"> {{'Transaction Business Attributes' | translate}} </th>
     </ng-container>
 
     <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'Name' | translate}} </th>
       <td mat-cell *matCellDef="let transaction"> {{ transaction.name }} </td>
     </ng-container>
 
     <ng-container matColumnDef="timestamp">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Time (UTC) </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'Time' | translate}} (UTC) </th>
       <td mat-cell *matCellDef="let transaction"> {{ formatDate(convertTimestampToDate(transaction.timestamp)) }} </td>
     </ng-container>
 
     <ng-container matColumnDef="value">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Value </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'Value' | translate}} </th>
       <td mat-cell *matCellDef="let transaction" [innerHTML]="transaction.value | prettyPrint"></td>
     </ng-container>
 

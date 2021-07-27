@@ -35,7 +35,7 @@ export class IncomingRequestToPayComponent implements OnInit {
   requestToPayIncomingData: Array<any> = [];
 
   /** Columns to be displayed in request to pay table. */
-  displayedColumns: string[] = ['startedAt', 'completedAt', 'transactionId', 'payerPartyId', 'payeePartyId', 'payerDfspId','payerDfspName', 'amount', 'currency', 'state'];
+  displayedColumns: string[] = ['startedAt', 'completedAt', 'transactionId', 'payerPartyId', 'payeePartyId', 'payerDfspId','payerDfspName', 'channel', 'amount', 'currency', 'status'];
 
   /** Data source for request to pay table. */
   dataSource: MatTableDataSource<any>;
@@ -56,7 +56,7 @@ export class IncomingRequestToPayComponent implements OnInit {
       this.dfspEntriesData = data.dfspEntries;
     });
     for(let request of this.requestToPayData) {
-      if(request.direction==="INCOMING")
+      if(request.direction==="INCOMING" && request.status!=="COMPLETED")
         this.requestToPayIncomingData.push(request);
     };
     // console.log(this.requestToPayIncomingData);

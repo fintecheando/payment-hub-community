@@ -111,9 +111,9 @@
 
       <ng-container matColumnDef="channel">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'Channel' | translate}} </th>
-        <td mat-cell *matCellDef="let channel"> {{ requestToPay.channel }} </td>
+        <td mat-cell *matCellDef="let requestToPay"> {{ requestToPay.channel }} </td>
       </ng-container>
-      
+
       <ng-container matColumnDef="amount">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'Amount' | translate}} </th>
         <td mat-cell *matCellDef="let requestToPay"> {{ requestToPay.amount }} </td>
@@ -124,9 +124,9 @@
         <td mat-cell *matCellDef="let requestToPay"> {{ requestToPay.currency }} </td>
       </ng-container>
 
-      <ng-container matColumnDef="state">
+      <ng-container matColumnDef="status">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'Status' | translate}} </th>
-        <td mat-cell *matCellDef="let requestToPay" [ngClass]="{'red': requestToPay.state==='FAILED','green': requestToPay.state==='ACCEPTED','orange': requestToPay.state==='IN_PROGRESS'}"> {{ requestToPay.state }} </td>
+        <td mat-cell *matCellDef="let requestToPay" [ngClass]="{'red': requestToPay.status==='FAILED','green': requestToPay.status==='ACCEPTED','orange': requestToPay.status==='IN_PROGRESS'}"> {{ requestToPay.status }} </td>
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
