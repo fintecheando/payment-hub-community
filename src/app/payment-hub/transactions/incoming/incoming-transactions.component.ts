@@ -29,6 +29,8 @@ import { RetryResolveDialogComponent } from '../retry-resolve-dialog/retry-resol
 })
 export class IncomingTransactionsComponent implements OnInit, AfterViewInit {
 
+  incomingTransactions: any;
+
   /** Minimum transaction date allowed. */
   minDate = new Date(2000, 0, 1);
   /** Maximum transaction date allowed. */
@@ -54,7 +56,7 @@ export class IncomingTransactionsComponent implements OnInit, AfterViewInit {
   /** Columns to be displayed in transactions table. */
   displayedColumns: string[] = ['startedAt', 'completedAt', 'transactionId', 'payerPartyId', 'payeePartyId', 'payerDfspId', 'payerDfspName', 'channel', 'amount', 'currency', 'status', 'actions'];
   /** Data source for transactions table. */
-  dataSource: TransactionsDataSource;
+  dataSource: MatTableDataSource<any>;
   /** Journal entries filter. */
   filterTransactionsBy = [
     {
@@ -258,7 +260,7 @@ export class IncomingTransactionsComponent implements OnInit, AfterViewInit {
     if (!this.sort.direction) {
       delete this.sort.active;
     }
-    this.dataSource.getTransactions(this.filterTransactionsBy, this.sort.active, this.sort.direction, this.paginator.pageIndex, this.paginator.pageSize);
+    // this.dataSource.getTransactions(this.filterTransactionsBy, this.sort.active, this.sort.direction, this.paginator.pageIndex, this.paginator.pageSize);
   }
 
   convertTimestampToUTCDate(timestamp: any) {
@@ -390,13 +392,17 @@ export class IncomingTransactionsComponent implements OnInit, AfterViewInit {
    * Initializes the data source for journal entries table and loads the first page.
    */
   getTransactions() {
-    this.dataSource = new TransactionsDataSource(this.transactionsService);
-    // new MatTableDataSource(this.dataSource);
-    this.dataSource.getTransactions(this.filterTransactionsBy, this.sort.active, this.sort.direction, this.paginator.pageIndex, this.paginator.pageSize);
-  }
-
-  getMockedData() {
-    
+    this.transactionsService.getTransactions(this.filterTransactionsBy, this.paginator.pageIndex, this.paginator.pageSize)
+    .subscribe(transactions => {
+      this.incomingTransactions = [];
+      for(let transaction of transactions.content) {
+        if(transaction.direction==="INCOMING")
+          this.incomingTransactions.push(transaction);
+      };
+      this.dataSource = new MatTableDataSource(this.incomingTransactions);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+    });
   }
 
   openRetryResolveDialog(workflowInstanceKey: any, action: string) {

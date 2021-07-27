@@ -22,6 +22,8 @@ export interface Transaction {
   payerQuoteCode: string;
   amount: number;
   currency: string;
+  channel: string;
+  direction: string;
 }
 
 export interface Transactions extends Paging {

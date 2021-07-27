@@ -18,9 +18,15 @@ export class RequestToPayService {
    */
   constructor(private httpService: HttpService) { }
 
-  getRequestsToPay() {
+  getRequestsToPayTmp() {
     return this.httpService.disableApiPrefix().get(this.httpService.getPaymentHubBaseUrl() + '/api/v1/transactionRequests', 
       {headers: this.httpService.getTenantHeaders()});
+  }
+
+  getRequestsToPay() {
+    return this.httpService
+     .disableApiPrefix()
+      .get('/assets/mock/payment-hub/requests.mock.json');
   }
 
   /*

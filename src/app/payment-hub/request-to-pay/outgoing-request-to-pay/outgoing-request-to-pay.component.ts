@@ -57,7 +57,7 @@ export class OutgoingRequestToPayComponent implements OnInit {
     	if(request.direction==="OUTGOING")
     		this.requestToPayOutgoingData.push(request);
     };
-    console.log(this.requestToPayOutgoingData);
+    // console.log(this.requestToPayOutgoingData);
   }
 
   ngOnInit() {
