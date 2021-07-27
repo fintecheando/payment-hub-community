@@ -1,3 +1,33 @@
+
+<div class="content">
+  <div fxLayout="row wrap" fxLayoutGap="16px">
+    <div fxFlex="22%" *ngFor="let num of [0,1,2]">
+  <mat-card class="mat-elevation-z3">
+    <mat-card-header>
+      <mat-icon>timeline</mat-icon>
+      <mat-card-title>{{barChart1Labels[num]}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{barChart1Data[0].label}} : {{barChart1Data[0].data[num]}}</p>
+      <p>{{barChart1Data[1].label}} : {{barChart1Data[1].data[num]}}</p>
+    </mat-card-content>
+  </mat-card>
+    </div>
+    <div fxFlex="22%">
+    <mat-card class="mat-elevation-z1">
+      <mat-card-header>
+        <mat-icon>timeline</mat-icon>
+        <mat-card-title>{{barChart2Labels[0]}}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{barChart2Data[0].label}} : {{barChart2Data[0].data[0]}}</p>
+        <p>{{barChart2Data[1].label}} : {{barChart2Data[1].data[0]}}</p>
+      </mat-card-content>
+    </mat-card>
+    </div>
+  </div>
+</div>
+
 <mat-grid-list cols="2" rowHeight="2:1">
   <mat-grid-tile>
   <canvas baseChart 
