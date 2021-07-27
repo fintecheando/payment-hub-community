@@ -9,6 +9,10 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
+import { CountUpModule } from 'ngx-countup';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { KpiCardComponent } from './dashboard/kpi-card/kpi-card.component';
+
 /**
  * Home Component
  *
@@ -17,11 +21,14 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 @NgModule({
   imports: [
     SharedModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    CountUpModule,
+    MatProgressBarModule
   ],
   declarations: [
     HomeComponent,
-    DashboardComponent
+    DashboardComponent,
+    KpiCardComponent
   ]
 })
 export class HomeModule { }
