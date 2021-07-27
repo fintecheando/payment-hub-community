@@ -7,18 +7,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BarChartComponent implements OnInit {
 
-  constructor() { }
+  constructor() {}
+
   public barChartOptions = {
     scaleShowVerticalLines: false,
     responsive: true
   };
-  public barChartLabels = ['2000', '2001', '2002', '2003', '2004', '2005', '2006'];
-  public barChartType = 'bar';
-  public barChartLegend = true;
-  public barChartData = [
-    {data: [75, 49, 89, 31, 86, 35, 50], label: 'Series A'},
-    {data: [48, 38, 65, 39, 66, 17, 80], label: 'Series B'}
+
+  public barChart1Labels = ['Canal SPEI', 'Canal SPID', 'Canal TEF'];
+  public barChart1Type = 'bar';
+  public barChart1Legend = true;
+  public barChart1Data = [
+    {data: [75, 49, 89], label: 'Transacciones Entrada'},
+    {data: [48, 38, 65], label: 'Transacciones Salida'}
   ];
+
+  public barChart2Labels = ['Aceptadas', 'Rechazadas', 'Completadas', 'Fallidas'];
+  public barChart2Type = 'bar';
+  public barChart2Legend = true;
+  public barChart2Data = [
+    {data: [90, 9, 73, 8], label: 'Transacciones Entrada'},
+    {data: [48, 0, 46, 2], label: 'Transacciones Salida'}
+  ];
+
   ngOnInit() {
   }
 }

@@ -93,10 +93,10 @@ export class SystemService {
    */
   getAuditTrailSearchTemplate(): Observable<any> {
     //return this.http.disableApiPrefix().get(this.http.getFineractBaseUrl() + '/audits/searchtemplate', {headers: this.http.getCustomHeaders(), withCredentials: true});
-    //return this.http.disableApiPrefix().get(this.http.getDirectFineractBaseUrl() + '/audits/searchtemplate', {headers: this.http.getDirectFineractHeaders(), withCredentials: true});
-    return this.http
+    return this.http.disableApiPrefix().get(this.http.getDirectFineractBaseUrl() + '/audits/searchtemplate', {headers: this.http.getDirectFineractHeaders(), withCredentials: true});
+    /*return this.http
      .disableApiPrefix()
-      .get('/assets/mock/audittemplate.mock.json');
+      .get('/assets/mock/audittemplate.mock.json');*/
   }
 
 }
