@@ -1,43 +1,93 @@
-<div class="container">
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-lg-3 col-md-6 col-sm-6">
+          <mifosx-kpi-card class="card card-stats" title="HOLA">
+              <div class="card-header card-header-warning card-header-icon">
+                  <div class="card-icon">
+                      <i class="material-icons">content_copy</i>
+                  </div>
+                  <p class="card-category">Used Space</p>
+                  <h3 class="card-title">49/50
+                      <small>GB</small>
+                  </h3>
+              </div>
+              <div class="card-footer">
+                  <div class="stats">
+                      <i class="material-icons text-danger">warning</i>
+                      <a href="javascript:void(0)">Get More Space...</a>
+                  </div>
+              </div>
+          </mifosx-kpi-card>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="card card-stats">
+              <div class="card-header card-header-success card-header-icon">
+                  <div class="card-icon">
+                      <i class="material-icons">store</i>
+                  </div>
+                  <p class="card-category">Revenue</p>
+                  <h3 class="card-title">$34,245</h3>
+              </div>
+              <div class="card-footer">
+                  <div class="stats">
+                      <i class="material-icons">date_range</i> Last 24 Hours
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="card card-stats">
+              <div class="card-header card-header-danger card-header-icon">
+                  <div class="card-icon">
+                      <i class="material-icons">info_outline</i>
+                  </div>
+                  <p class="card-category">Fixed Issues</p>
+                  <h3 class="card-title">75</h3>
+              </div>
+              <div class="card-footer">
+                  <div class="stats">
+                      <i class="material-icons">local_offer</i> Tracked from Github
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="card card-stats">
+              <div class="card-header card-header-info card-header-icon">
+                  <div class="card-icon">
+                      <i class="fa fa-twitter"></i>
+                  </div>
+                  <p class="card-category">Followers</p>
+                  <h3 class="card-title">+245</h3>
+              </div>
+              <div class="card-footer">
+                  <div class="stats">
+                      <i class="material-icons">update</i> Just Updated
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
   <div class="grid-container">
-    <div class="kpi-wrap">
-      <mat-grid-list cols="4" rowHeight="131px">
-        <mat-grid-tile *ngFor="let card of KPICards" [colspan]="1" [rowspan]="1">
-          <mifosx-kpi-card class="kpi-card"
-                        [query]="card.query"
-                        [title]="card.title"
-                        [duration]="card.duration"
-                        [progress]="card.progress"
-          ></mifosx-kpi-card>
-        </mat-grid-tile>
-      </mat-grid-list>
-    </div>
     <div>
-      <mat-grid-list cols="5" rowHeight="510px">
-        <mat-grid-tile *ngFor="let card of cards" [colspan]="card.cols" [rowspan]="card.rows">
           <mat-card class="dashboard-card">
             <mat-card-header class="dashboard-card__header">
               <mat-card-title>
-                <h3>Last sales</h3>
+                <h3>{{'Transactions' | translate}}</h3>
                 <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
                   <mat-icon>more_vert</mat-icon>
                 </button>
                 <mat-menu #menu="matMenu" xPosition="before">
-                  <button mat-menu-item  (click)="changeDateRange('This year')">This year</button>
-                  <button mat-menu-item  (click)="changeDateRange('Last year')">Last year</button>
+                  <button mat-menu-item  (click)="changeDateRange('Channel SPEI')">{{'Channel SPEI' | translate}}</button>
+                  <button mat-menu-item  (click)="changeDateRange('Channel SPEI')">{{'Channel SPID' | translate}}</button>
+                  <button mat-menu-item  (click)="changeDateRange('Channel SPEI')">{{'Channel TEF' | translate}}</button>
                 </mat-menu>
               </mat-card-title>
             </mat-card-header>
             <mat-card-content class="dashboard-card-content">
-              <div>
-                <!--
-                <app-bar-chart [query]="card.query" *ngIf="card.chart === 'bar'"></app-bar-chart>
-                -->
-              </div>
+              <mifosx-bar-chart></mifosx-bar-chart>
             </mat-card-content>
           </mat-card>
-        </mat-grid-tile>
-      </mat-grid-list>
     </div>
   </div>
 </div>

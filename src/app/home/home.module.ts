@@ -12,6 +12,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { CountUpModule } from 'ngx-countup';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { KpiCardComponent } from './dashboard/kpi-card/kpi-card.component';
+import { ChartsModule } from 'ng2-charts';
+import { BarChartComponent } from './dashboard/bar-chart/bar-chart.component';
+import { StatusCardComponent } from './dashboard/status-card/status-card.component';
 
 /**
  * Home Component
@@ -23,12 +26,15 @@ import { KpiCardComponent } from './dashboard/kpi-card/kpi-card.component';
     SharedModule,
     HomeRoutingModule,
     CountUpModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    ChartsModule
   ],
   declarations: [
     HomeComponent,
     DashboardComponent,
-    KpiCardComponent
+    KpiCardComponent,
+    BarChartComponent,
+    StatusCardComponent
   ]
 })
 export class HomeModule { }

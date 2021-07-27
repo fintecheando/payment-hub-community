@@ -1,6 +1,13 @@
 /** Angular Imports */
 import { Component, OnInit } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+
+
+
+interface CardSettings {
+  title: string;
+  iconClass: string;
+  type: string;
+}
 
 /**
  * Dashboard component.
@@ -11,24 +18,39 @@ import { BehaviorSubject } from 'rxjs';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+  lightCard: CardSettings = {
+    title: 'Light',
+    iconClass: 'nb-lightbulb',
+    type: 'primary',
+  };
+  rollerShadesCard: CardSettings = {
+    title: 'Roller Shades',
+    iconClass: 'nb-roller-shades',
+    type: 'success',
+  };
+  wirelessAudioCard: CardSettings = {
+    title: 'Wireless Audio',
+    iconClass: 'nb-audio',
+    type: 'info',
+  };
+  coffeeMakerCard: CardSettings = {
+    title: 'Coffee Maker',
+    iconClass: 'nb-coffee-maker',
+    type: 'warning',
+  };
 
+  statusCards: CardSettings[];
+
+  commonStatusCardsSet: CardSettings[] = [
+    this.lightCard,
+    this.rollerShadesCard,
+    this.wirelessAudioCard,
+    this.coffeeMakerCard,
+  ];
   constructor() {  }
-  private query = new BehaviorSubject({
-    measures: ["Orders.count"],
-    timeDimensions: [{ dimension: "Orders.createdAt", granularity: "month", dateRange: "This year" }],
-    dimensions: ["Orders.status"],
-    filters: [{ dimension: "Orders.status", operator: "notEquals", values: ["completed"] }]
-  });
-
-  cards:any = [];
 
   ngOnInit() {
-    this.query.subscribe(data => {
-      this.cards[0] = {
-        chart: "bar", cols: 2, rows: 1,
-        query: data
-      };
-    });
+    this.statusCards = this.commonStatusCardsSet;
   }
 
 }

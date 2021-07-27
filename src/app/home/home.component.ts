@@ -15,7 +15,7 @@ import { AuthenticationService } from '../core/authentication/authentication.ser
 export class HomeComponent implements OnInit {
 
   /** Username of authenticated user. */
-  username: string;
+  username: string = "admin";
 
   /**
    * @param {AuthenticationService} authenticationService Authentication Service.

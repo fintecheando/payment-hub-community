@@ -1,0 +1,53 @@
+mat-card {
+    flex-direction: row;
+    align-items: center;
+    height: 6rem;
+    overflow: visible;
+
+    .icon-container {
+      height: 100%;
+      padding: 0.625rem;
+    }
+
+    .icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 5.75rem;
+      height: 4.75rem;
+      font-size: 3.75rem;
+      border-radius: mat-theme(card-border-radius);
+      transition: width 0.4s ease;
+      transform: translate3d(0, 0, 0);
+      -webkit-transform-style: preserve-3d;
+      -webkit-backface-visibility: hidden;
+      color: mat-theme(text-control-color);
+
+    }
+
+    &.off {
+      color: mat-theme(text-hint-color);
+
+      .status,
+      .title,
+      .icon {
+        color: mat-theme(text-hint-color);
+      }
+    }
+
+    .details {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+      border-left: 1px solid transparent;
+    }
+
+    .title {
+      margin: 0;
+    }
+
+    .status {
+      text-transform: uppercase;
+    }
+  }
