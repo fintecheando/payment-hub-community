@@ -11,6 +11,7 @@ import { Route } from '../core/route/route.service';
 
 /** Custom Components */
 import { IncomingTransactionsComponent } from './transactions/incoming/incoming-transactions.component';
+import { JournalEntriesComponent } from './transactions/journal-entries/journal-entries.component';
 import { TransactionDetailsComponent } from './transactions/transaction-details.component';
 import { PaymentHubComponent } from './paymenthub.component';
 import { IncomingRequestToPayComponent } from './request-to-pay/incoming-request-to-pay/incoming-request-to-pay.component';
@@ -19,10 +20,12 @@ import { ViewRequestToPayComponent } from './request-to-pay/view-request-to-pay/
 
 import { CurrenciesResolver } from './transactions/resolver/currencies.resolver';
 import { TransactionResolver } from './transactions/resolver/transaction.resolver';
+import { JournalResolver } from './transactions/resolver/journal.resolver';
 import { OutgoingTransactionsComponent } from './transactions/outgoing/outgoing-transactions.component';
 import { DfspResolver } from './transactions/resolver/dfsp.resolver';
 import { RequestToPayResolver } from './request-to-pay/common-resolvers/request-to-pay.resolver';
 import { ViewRequestToPayResolver } from './request-to-pay/common-resolvers/view-request-to-pay.resolver';
+
 
 /** Payment HUB Routes */
 const routes: Routes = [
@@ -53,6 +56,15 @@ const routes: Routes = [
               data: { title: 'View Transaction', routeParamBreadcrumb: 'id' },
               resolve: {
                 transaction: TransactionResolver,
+                dfspEntries: DfspResolver
+              }
+            },
+            {
+              path: 'journalentries/:id',
+              component: JournalEntriesComponent,
+              data: { title: 'View Journal Entrie', routeParamBreadcrumb: 'id' },
+              resolve: {
+                journal: JournalResolver,
                 dfspEntries: DfspResolver
               }
             }
@@ -147,7 +159,8 @@ const routes: Routes = [
     TransactionResolver,
     DfspResolver,
     RequestToPayResolver,
-    ViewRequestToPayResolver
+    ViewRequestToPayResolver,
+    JournalResolver
   ]
 })
 export class PaymentHubRoutingModule { }

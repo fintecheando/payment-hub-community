@@ -1,6 +1,7 @@
 /** Angular Routes */
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
+import { HttpService } from 'app/core/http/http.service';
 
 /** rxjs Imports */
 import { Observable } from 'rxjs';
@@ -24,7 +25,7 @@ export class TransactionsService {
   /**
    * @param {HttpClient} http Http Client to send requests.
    */
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpService) { }
 
   /**
    * Gets all the filtered transactions.
@@ -93,4 +94,8 @@ export class TransactionsService {
       .get('/assets/mock/payment-hub/currencies.mock.json')
       .pipe(map((currencies: any) => currencies as Currency[]));
   }
+
+  getJournalEntries(): Observable<any> {
+      return this.http.disableApiPrefix().get(this.http.getBackOfficeUrl() + '/api/v1/journalentries/198fc18a6b3a64c25adf?transactionDetails=true', {headers: this.http.getBackOfficeHeaders()});
+    }
 }

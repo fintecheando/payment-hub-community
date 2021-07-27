@@ -78,6 +78,7 @@ export class HttpService extends HttpClient {
   paymentHubUrl: string;
   headers: HttpHeaders;
   directFineract: string;
+  backoffice: string;
 
   constructor(private httpHandler: HttpHandler,
               private injector: Injector,
@@ -94,6 +95,7 @@ export class HttpService extends HttpClient {
     this.fineractUrl = "https://apis.flexcore.mx/V1.0/fineract-protected-movil";
     this.paymentHubUrl = "http://localhost:8800";
     this.directFineract = "https://apis.flexcore.mx/V1.0/fineract-protected"
+    this.backoffice = "https://backoffice.flexcore.mx/fineract-provider";
   }
 
   cache(forceUpdate?: boolean): HttpClient {
@@ -121,6 +123,10 @@ export class HttpService extends HttpClient {
     return this.paymentHubUrl;
   }
 
+  getBackOfficeUrl(): string {
+    return this.backoffice;
+  }
+
 //  .set('Platform-TenantId', tenantId)
   setCustomHeaders(tenantId: string) {
     this.headers = new HttpHeaders()
@@ -141,6 +147,13 @@ export class HttpService extends HttpClient {
     return new HttpHeaders()
       .set('Content-Type', 'application/json')
       .set('X-Gravitee-Api-Key', 'a32d4ccd-c5b0-469f-aa49-0e3788d47d2e')
+  }
+
+  getBackOfficeHeaders(): HttpHeaders {
+    return new HttpHeaders()
+      .set('Content-Type', 'application/json')
+      .set('fineract-platform-tenantid', 'default')
+      .set('Authorization', 'Basic aW5mb3RlYzpwYXNzd29yZA==')
   }
 
   getCustomHeaders(): HttpHeaders {

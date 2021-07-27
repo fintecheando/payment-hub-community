@@ -17,7 +17,7 @@ import { RetryResolveDialogComponent } from './transactions/retry-resolve-dialog
 import { IncomingRequestToPayComponent } from './request-to-pay/incoming-request-to-pay/incoming-request-to-pay.component';
 import { OutgoingRequestToPayComponent } from './request-to-pay/outgoing-request-to-pay/outgoing-request-to-pay.component';
 import { ViewRequestToPayComponent } from './request-to-pay/view-request-to-pay/view-request-to-pay.component';
-
+import { JournalEntriesComponent } from './transactions/journal-entries/journal-entries.component';
 /**
  * Payment HUB Module
  *
@@ -39,7 +39,8 @@ import { ViewRequestToPayComponent } from './request-to-pay/view-request-to-pay/
     RetryResolveDialogComponent,
     IncomingRequestToPayComponent,
     OutgoingRequestToPayComponent,
-    ViewRequestToPayComponent
+    ViewRequestToPayComponent,
+    JournalEntriesComponent
   ],
   entryComponents: [
     PaymentHubComponent,

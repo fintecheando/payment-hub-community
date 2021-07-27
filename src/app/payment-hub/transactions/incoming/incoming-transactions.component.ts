@@ -54,7 +54,7 @@ export class IncomingTransactionsComponent implements OnInit, AfterViewInit {
   /** Transaction ID form control. */
   transactionId = new FormControl();
   /** Columns to be displayed in transactions table. */
-  displayedColumns: string[] = ['startedAt', 'completedAt', 'transactionId', 'payerPartyId', 'payeePartyId', 'payerDfspId', 'payerDfspName', 'channel', 'amount', 'currency', 'status', 'actions'];
+  displayedColumns: string[] = ['startedAt', 'completedAt', 'transactionId', 'payerPartyId', 'payeePartyId', 'payerDfspId', 'payerDfspName', 'channel', 'amount', 'currency', 'status', 'more', 'actions'];
   /** Data source for transactions table. */
   dataSource: MatTableDataSource<any>;
   /** Journal entries filter. */
