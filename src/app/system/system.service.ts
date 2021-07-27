@@ -29,6 +29,12 @@ export class SystemService {
     return this.http.disableApiPrefix().get(this.http.getDirectFineractBaseUrl() + '/roles', {headers: this.http.getDirectFineractHeaders()});
   }
 
+  getRolesMock(): Observable<any> {
+    return this.http
+     .disableApiPrefix()
+      .get('/assets/mock/roles.mock.json');
+  }
+
   /**
    * @param {any} role Role to be created.
    * @returns {Observable<any>}
@@ -76,6 +82,12 @@ export class SystemService {
   getAuditTrail(auditTrailId: string): Observable<any> {
     //return this.http.disableApiPrefix().get(this.http.getFineractBaseUrl() + `/audits/${auditTrailId}`, {headers: this.http.getCustomHeaders()});
     return this.http.disableApiPrefix().get(this.http.getDirectFineractBaseUrl() + `/audits/${auditTrailId}`, {headers: this.http.getDirectFineractHeaders()});
+  }
+
+  getAuditTrailMock(auditTrailId: string): Observable<any> {
+    return this.http
+     .disableApiPrefix()
+      .get('/assets/mock/audit.transaction.mock.json');
   }
 
   /**

@@ -118,6 +118,7 @@
     "Transaction Task List": "Lista de Tareas de Transacción",
     "Payment Process Id": "Id del Proceso de Pago",
     "Time": "Hora",
+    "Date": "Fecha",
     "Task Id": "Id Tarea",
     "Task Type": "Tipo Tarea",
     "Transaction Business Attributes": "Atributos de la Transacción del Negocio",
@@ -128,14 +129,6 @@
         "US Dollar": "Dólar Americano",
         "Euro": "Euro"
     },
-    "Roles and Permissions": "Roles y Permisos",
-    "Filter": "Filtro",
-    "Add Role": "Agregar Rol",
-    "Cancel": "Cancelar",
-    "Submit": "Aceptar",
-    "Role Description is": "El rol de la descripción es",
-    "Role Name is": "El nombre del rol es",
-    "Add": "Agregar",
     "Download CSV": "Descargar CSV",
     "Resource ID": "Recurso",
     "User": "Usuario",
@@ -158,10 +151,15 @@
         "BLOCK": "Bloquear",
         "UNBLOCK": "Desbloquear"
     },
-    "Date": "Fecha",
-    "Savings Account No": "Nº de Cuenta de Ahorro",
+    "Command": "Parámetro",
+    "Command Value": "Valor",
     "Group Level": "Nivel de Grupo",
-    "Command": "Comando",
-    "Command Value": "Valor del Comando"
+    "Savings Account No": "Número de Cuenta",
+    "Roles and Permissions": "Perfiles y Permisos",
+    "Filter": "Filtro",
+    "Add Role": "Agregar Role",
+    "Cancel": "Cancelar",
+    "Submit": "Aceptar",
+    "Add": "Agregar"
 
 }

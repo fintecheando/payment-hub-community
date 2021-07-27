@@ -118,24 +118,12 @@
     "Transaction Task List": "Transaction Task List",
     "Payment Process Id": "Payment Process Id",
     "Time": "Time",
+    "Date": "Date",
     "Task Id": "Task Id",
     "Task Type": "Task Type",
     "Transaction Business Attributes": "Transaction Business Attributes",
     "Name": "Name",
     "Value": "Value",
-    "Currencies": {
-        "Mexican Peso": "Mexican Peso",
-        "US Dollar": "US Dollar",
-        "Euro": "Euro"
-    },
-    "Roles and Permissions": "Roles and Permissions",
-    "Filter": "Filter",
-    "Add Role": "Add Role",
-    "Cancel": "Cancel",
-    "Submit": "Acept",
-    "Role Description is": "Role Description is",
-    "Role Name is": "Role Name is",
-    "Add": "Add",
     "Download CSV": "Download CSV",
     "Resource ID": "Resource ID",
     "User": "User",
@@ -158,10 +146,18 @@
         "BLOCK": "Block",
         "UNBLOCK": "UnBlock"
     },
-    "Date": "Date",
-    "Savings Account No": "Savings Account No",
+    "Command": "Command",
+    "Command Value": "Command Value",
     "Group Level": "Group Level",
-    "Command": "Comando",
-    "Command Value": "Valor del Comando"
+    "Savings Account No": "Savings Account No",
+    "Roles and Permissions": "Roles and Permissions",
+    "Filter": "Filter",
+    "Add Role": "Add Role",
+    "Cancel": "Cancel",
+    "Submit": "Submit",
+    "Add": "Add"
+
+
+
 
 }

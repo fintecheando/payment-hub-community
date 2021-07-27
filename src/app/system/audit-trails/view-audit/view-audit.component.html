@@ -21,11 +21,11 @@
                     </div>
 
                     <div fxFlex="50%">
-                        {{ auditTrailData.processingResult }}
+                        {{ auditTrailData.processingResult | translate }}
                     </div>
 
                     <div fxFlex="50%" class="mat-body-strong">
-                        {{'Username' | translate}}
+                        {{'User' | translate}}
                     </div>
 
                     <div fxFlex="50%">
@@ -37,7 +37,7 @@
                     </div>
 
                     <div fxFlex="50%">
-                        {{ auditTrailData.actionName }}
+                        {{ 'ACTIONS.' + auditTrailData.actionName | translate }}
                     </div>
 
                     <div fxFlex="50%" class="mat-body-strong">
@@ -102,7 +102,7 @@
 
             <ng-container matColumnDef="command">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'Command' | translate}} </th>
-                <td mat-cell *matCellDef="let auditTrailCommand"> {{ auditTrailCommand.command }} </td>
+                <td mat-cell *matCellDef="let auditTrailCommand"> {{ auditTrailCommand.command | translate }} </td>
             </ng-container>
 
             <ng-container matColumnDef="commandValue">

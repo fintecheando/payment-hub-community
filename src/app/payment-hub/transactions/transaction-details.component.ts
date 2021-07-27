@@ -104,7 +104,6 @@ export class TransactionDetailsComponent implements OnInit {
    */
   ngOnInit() {
     this.route.data.subscribe((data: { transaction: any }) => {
-      console.log(data);
       this.datasource = data.transaction;
       this.setTransactionBusinessAttributes();
     });
