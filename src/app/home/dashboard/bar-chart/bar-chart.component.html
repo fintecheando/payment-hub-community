@@ -1,24 +1,23 @@
-<mat-card>
-  <mat-card-content>
-    <div class="row">
-      <div class="col-lg-6 col-md-6 col-sm-6">
-          <canvas baseChart
-                  [datasets]="barChart1Data"
-                  [labels]="barChart1Labels"
-                  [options]="barChartOptions"
-                  [legend]="barChart1Legend"
-                  [chartType]="barChart1Type">
-          </canvas>
-      </div>
-      <div class="col-lg-6 col-md-6 col-sm-6">
-          <canvas baseChart
-                  [datasets]="barChart2Data"
-                  [labels]="barChart2Labels"
-                  [options]="barChartOptions"
-                  [legend]="barChart2Legend"
-                  [chartType]="barChart2Type">
-          </canvas>
-      </div>
-    </div>
-  </mat-card-content>
-</mat-card>
+<mat-grid-list cols="2" rowHeight="2:1">
+  <mat-grid-tile>
+  <canvas baseChart 
+  [datasets]="barChart1Data"
+  [labels]="barChart1Labels"
+  [options]="barChartOptions"
+  [legend]="barChart1Legend"
+  [chartType]="barChart1Type">
+</canvas>
+  </mat-grid-tile>
+  <mat-grid-tile>
+<canvas baseChart 
+  [datasets]="barChart2Data"
+  [labels]="barChart2Labels"
+  [options]="barChartOptions"
+  [legend]="barChart2Legend"
+  [chartType]="barChart2Type">
+</canvas>
+  </mat-grid-tile>
+
+</mat-grid-list>
+   
+         
