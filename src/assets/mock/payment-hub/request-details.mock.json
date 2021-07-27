@@ -1,20 +1,20 @@
 {
-    "transfer":{
+    "transactionRequest":{
        "id":42,
        "workflowInstanceKey":2251799813688522,
        "transactionId":"f9358640-4702-4c1c-9634-628b4dc705db",
        "startedAt":"2021-04-17T11:46:01.000+0000",
        "completedAt":"2021-04-17T11:46:55.000+0000",
-       "status":"COMPLETED",
-       "payeeFirstName": "WARREN",
-       "payeeLastName": "BUFFET",
-       "payeeTaxId": "BUFW840412DV0",
+       "status":"IN_PROGRESS",
        "payeeDfspId":"in03tn05",
        "payeePartyId":"27710305999",
        "payeePartyIdType":"MSISDN",
+       "payeeFirstName": "WARREN",
+       "payeeLastName": "BUFFET",
+       "payeeTaxId": "BUFW840412DV0",
        "payeeFee":0,
        "payeeFeeCurrency":"MXP",
-       "payeeQuoteCode":"6998390f-02f4-40af-b6d9-bb79634b57f6",
+       "payeeQuoteCode":"390fbb79-02f4-40af-b6d9-6998634b57f6",
        "payerFirstName": "GUSTAVO",
        "payerLastName": "ESPINDOLA PEREZ",
        "payerTaxId": "EIPG930618CP1",
@@ -24,7 +24,7 @@
        "payerFee":10,
        "payerFeeCurrency":"MXP",
        "payerQuoteCode":"634b57f6-02f4-40af-b6d9-6998390fbb79",
-       "amount":5000.00,
+       "amount":1023.45,
        "currency":"MXP"
     },
     "tasks":[
@@ -150,7 +150,7 @@
           "workflowKey":2251799813686882,
           "workflowInstanceKey":2251799813688522,
           "timestamp":1587124014581,
-          "intent":"ACTIVATED",
+          "intent":"IN_PROGRESS",
           "recordType":"EVENT",
           "type":"block-funds"
        },
@@ -159,7 +159,7 @@
           "workflowKey":2251799813686882,
           "workflowInstanceKey":2251799813688522,
           "timestamp":1587124016015,
-          "intent":"COMPLETED",
+          "intent":"IN_PROGRESS",
           "recordType":"EVENT",
           "type":"block-funds"
        },
@@ -168,7 +168,7 @@
           "workflowKey":2251799813686882,
           "workflowInstanceKey":2251799813688522,
           "timestamp":1587124017734,
-          "intent":"CREATED",
+          "intent":"IN_PROGRESS",
           "recordType":"EVENT",
           "type":"send-transfer-request"
        },
@@ -177,7 +177,7 @@
           "workflowKey":2251799813686882,
           "workflowInstanceKey":2251799813688522,
           "timestamp":1587124018069,
-          "intent":"ACTIVATED",
+          "intent":"IN_PROGRESS",
           "recordType":"EVENT",
           "type":"send-transfer-request"
        },
@@ -186,7 +186,7 @@
           "workflowKey":2251799813686882,
           "workflowInstanceKey":2251799813688522,
           "timestamp":1587124018781,
-          "intent":"COMPLETED",
+          "intent":"IN_PROGRESS",
           "recordType":"EVENT",
           "type":"send-transfer-request"
        },
@@ -195,7 +195,7 @@
           "workflowKey":2251799813686882,
           "workflowInstanceKey":2251799813688522,
           "timestamp":1587124027332,
-          "intent":"CREATED",
+          "intent":"IN_PROGRESS",
           "recordType":"EVENT",
           "type":"book-funds"
        },
@@ -204,7 +204,7 @@
           "workflowKey":2251799813686882,
           "workflowInstanceKey":2251799813688522,
           "timestamp":1587124027444,
-          "intent":"ACTIVATED",
+          "intent":"IN_PROGRESS",
           "recordType":"EVENT",
           "type":"book-funds"
        },
@@ -213,7 +213,7 @@
           "workflowKey":2251799813686882,
           "workflowInstanceKey":2251799813688522,
           "timestamp":1587124028026,
-          "intent":"COMPLETED",
+          "intent":"IN_PROGRESS",
           "recordType":"EVENT",
           "type":"book-funds"
        },
@@ -222,7 +222,7 @@
           "workflowKey":2251799813686882,
           "workflowInstanceKey":2251799813688522,
           "timestamp":1587124029262,
-          "intent":"CREATED",
+          "intent":"IN_PROGRESS",
           "recordType":"EVENT",
           "type":"send-success-to-channel"
        },
@@ -231,7 +231,7 @@
           "workflowKey":2251799813686882,
           "workflowInstanceKey":2251799813688522,
           "timestamp":1587124029460,
-          "intent":"ACTIVATED",
+          "intent":"IN_PROGRESS",
           "recordType":"EVENT",
           "type":"send-success-to-channel"
        },
@@ -240,7 +240,7 @@
           "workflowKey":2251799813686882,
           "workflowInstanceKey":2251799813688522,
           "timestamp":1587124029942,
-          "intent":"COMPLETED",
+          "intent":"IN_PROGRESS",
           "recordType":"EVENT",
           "type":"send-success-to-channel"
        }

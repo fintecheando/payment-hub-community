@@ -1,5 +1,8 @@
 <div class="container m-b-20" fxLayout="row" fxLayoutAlign="end" fxLayoutGap="20px">
+  <!--
   <button *ngIf="hasRefundAccess()" mat-raised-button color="primary" (click)="openReturnDialog()">
+    -->
+  <button mat-raised-button color="primary" (click)="openReturnDialog()">
     {{'Refund' | translate}}
   </button>
 
@@ -8,9 +11,8 @@
   </button>
 </div>
 
-<!--
 <div class="container">
-  <mat-grid-list cols="2" rowHeight="350">
+  <mat-grid-list cols="2" rowHeight="450">
     <mat-grid-tile [colspan]="1" [rowspan]="1">
       <mat-card class="mat-elevation-z8" *ngIf="datasource.transfer">
         <mat-card-title>{{'Payer' | translate}}</mat-card-title>
@@ -52,12 +54,12 @@
             </div>
 
             <div fxFlex="50%" fxFlex.lt-md="50%" class="header"
-              *ngIf="datasource.transfer.payerDateOfBirth!==undefined">
-              {{'Date of Birth' | translate}}
+              *ngIf="datasource.transfer.payerTaxId!==undefined">
+              {{'Tax Id' | translate}}
             </div>
 
-            <div fxFlex="50%" fxFlex.lt-md="50%" *ngIf="datasource.transfer.payerDateOfBirth!==undefined">
-              {{ datasource.transfer.payerDateOfBirth }}
+            <div fxFlex="50%" fxFlex.lt-md="50%" *ngIf="datasource.transfer.payerTaxId!==undefined">
+              {{ datasource.transfer.payerTaxId }}
             </div>
 
             <div fxFlex="50%" fxFlex.lt-md="50%" class="header" *ngIf="datasource.transfer.payerLastName!==undefined">
@@ -122,12 +124,12 @@
             </div>
 
             <div fxFlex="50%" fxFlex.lt-md="50%" class="header"
-              *ngIf="datasource.transfer.payeeDateOfBirth!==undefined">
-              {{'Date of Birth' | translate}}
+              *ngIf="datasource.transfer.payerTaxId!==undefined">
+              {{'Tax Id' | translate}}
             </div>
 
-            <div fxFlex="50%" fxFlex.lt-md="50%" *ngIf="datasource.transfer.payeeDateOfBirth!==undefined">
-              {{ datasource.transfer.payeeDateOfBirth }}
+            <div fxFlex="50%" fxFlex.lt-md="50%" *ngIf="datasource.transfer.payerTaxId!==undefined">
+              {{ datasource.transfer.payerTaxId }}
             </div>
 
             <div fxFlex="50%" fxFlex.lt-md="50%" class="header" *ngIf="datasource.transfer.payeeLastName!==undefined">
@@ -153,14 +155,14 @@
   </mat-grid-list>
   <mat-grid-list cols="2" rowHeight="450">
     <mat-grid-tile [colspan]="1" [rowspan]="1">
-      <mat-card class="mat-elevation-z8" *ngIf="datasource.transfer">
+      <mat-card class="mat-elevation-z8" style="min-height: 300px;" *ngIf="datasource.transfer">
         <mat-card-title>{{'Transfer' | translate}}</mat-card-title>
         <mat-card-content>
 
           <div fxLayout="row wrap" class="content">
 
             <div fxFlex="50%" fxFlex.lt-md="50%" class="header" *ngIf="datasource.transfer.transactionId!==undefined">
-              {{'Transfer Code' | translate}}
+              {{'Transfer ID' | translate}}
             </div>
 
             <div fxFlex="50%" fxFlex.lt-md="50%" *ngIf="datasource.transfer.transactionId!==undefined">
@@ -218,7 +220,7 @@
       </mat-card>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="1" [rowspan]="1">
-      <mat-card class="mat-elevation-z8" *ngIf="datasource.transfer">
+      <mat-card class="mat-elevation-z8" style="min-height: 300px;" *ngIf="datasource.transfer">
         <mat-card-title>{{'Fees' | translate}}</mat-card-title>
         <mat-card-content>
 
@@ -262,7 +264,7 @@
     </mat-grid-tile>
   </mat-grid-list>
 </div>
--->
+
 <div class="mat-elevation-z8 container">
 
   <table mat-table [dataSource]="taskList" multiTemplateDataRows matSort>
