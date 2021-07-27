@@ -25,7 +25,6 @@ export class SystemService {
    * @returns {Observable<any>} Fetches Roles and Permissions
    */
   getRoles(): Observable<any> {
-    //return this.http.disableApiPrefix().get(this.http.getFineractBaseUrl() + '/roles', {headers: this.http.getCustomHeaders()});
     return this.http.disableApiPrefix().get(this.http.getDirectFineractBaseUrl() + '/roles', {headers: this.http.getDirectFineractHeaders()});
   }
 
@@ -40,7 +39,6 @@ export class SystemService {
    * @returns {Observable<any>}
    */
   createRole(role: any): Observable<any> {
-    //return this.http.disableApiPrefix().post(this.http.getFineractBaseUrl() + '/roles', role, {headers: this.http.getCustomHeaders()});
     return this.http.disableApiPrefix().post(this.http.getDirectFineractBaseUrl() + '/roles', role, {headers: this.http.getDirectFineractHeaders()});
   }
 
@@ -52,7 +50,7 @@ export class SystemService {
    * @param {number} limit Number of entries within the page.
    * @returns {Observable<any>} Audit Trails.
    */
-  getAuditTrailsTmp(filterBy: any, orderBy: string, sortOrder: string, offset: number, limit: number): Observable<any> {
+  getAuditTrails(filterBy: any, orderBy: string, sortOrder: string, offset: number, limit: number): Observable<any> {
     let httpParams = new HttpParams()
       .set('offset', offset.toString())
       .set('limit', limit.toString())
@@ -69,7 +67,7 @@ export class SystemService {
     return this.http.disableApiPrefix().get(this.http.getDirectFineractBaseUrl() + '/audits', { params: httpParams, headers: this.http.getDirectFineractHeaders() });
   }
 
-  getAuditTrails(filterBy: any, orderBy: string, sortOrder: string, offset: number, limit: number): Observable<any> {
+  getAuditTrailsMock(filterBy: any, orderBy: string, sortOrder: string, offset: number, limit: number): Observable<any> {
     return this.http
      .disableApiPrefix()
       .get('/assets/mock/audits.mock.json');
